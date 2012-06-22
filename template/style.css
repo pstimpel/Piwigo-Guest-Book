@@ -17,8 +17,6 @@
 #guestbookAdd h4 {
   margin:0;
   cursor:pointer;
-  border-bottom-width:1px;
-  border-bottom-style:dotted;
   text-align:center;
 }
   #guestbookAdd h4:hover {
@@ -51,20 +49,23 @@ p.comment_count {
   padding:0;
   list-style:none;
 }
-
-.commentElement .description {
-  padding:7px !important;
-}
-
-.commentElement .commentHeader  {
-  background:#444;
-  margin:-7px;
-  margin-bottom:0;
-  padding:3px;
-  color:#ddd;
-  border-radius:5px 5px 0 0;
-}
-
-.commentElement .commentHeader a {
-  color:#FFE093;
-}
+  .commentElement .description {
+    padding:7px !important;
+  }
+  .commentHeader  {
+    background:#444;
+    margin:-7px;
+    margin-bottom:0;
+    padding:6px;
+    color:#ddd;
+    border-radius:5px 5px 0 0;
+  }
+  .commentAuthor {
+    font-size:1.1em;
+  }
+  .commentDate {
+    font-size:0.9em;
+  }
+  .commentHeader a {
+    color:#FFE093;
+  }

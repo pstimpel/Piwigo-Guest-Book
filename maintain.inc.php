@@ -7,6 +7,7 @@ define('default_guestbook_config', serialize(array(
   'email_admin_on_comment' => false,
   'email_admin_on_comment_validation' => false,
   'nb_comment_page' => 15,
+  'activate_rating' => true,
 )));
 
 // Installation

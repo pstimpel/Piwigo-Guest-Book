@@ -110,7 +110,7 @@ if ( isset( $_POST['content'] ) )
     'email' => trim( @$_POST['email'] ),
     'content' => trim( $_POST['content'] ),
     'website' => trim( $_POST['website'] ),
-    'rate' => $_POST['score'],
+    'rate' => @$_POST['score'],
    );
 
   include_once(GUESTBOOK_PATH.'include/functions_comment.inc.php');
@@ -227,10 +227,12 @@ SELECT
         'DATE' => format_date($row['date'], true),
         'CONTENT' => trigger_event('render_comment_content',$row['content']),
         'WEBSITE' => $row['website'],
-        'WEBSITE_NAME' => preg_replace('#^(https?:\/\/)#i', null, $row['website']),
-        'STARS' => get_stars($row['rate'], GUESTBOOK_PATH .'template/jquery.raty/'),
-        'RATE' => $row['rate'],
       );
+      
+    if ($conf['guestbook']['activate_rating'])
+    {
+      $tpl_comment['STARS'] = get_stars($row['rate'], GUESTBOOK_PATH .'template/jquery.raty/');
+    }
       
     if (is_admin() and !empty($row['email']))
     {
@@ -309,6 +311,7 @@ if ($show_add_comment_form)
         'AUTHOR' => $author ,
         'WEBSITE' => $website ,
         'EMAIL' => $email ,
+        'ACTIVATE_RATING' => $conf['guestbook']['activate_rating'],
       ));
 }
 

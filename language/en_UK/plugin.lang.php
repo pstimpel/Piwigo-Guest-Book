@@ -8,5 +8,7 @@ $lang['not publicly visible'] = 'not publicly visible';
 $lang['Website'] = 'Website';
 $lang['* : mandatory fields'] = '* : mandatory fields';
 $lang['There are %d messages'] = 'There are %d messages';
+$lang['Activate rating'] = 'Activate rating';
+$lang['%s says on %s :'] = '%s says on %s :';
 
 ?>

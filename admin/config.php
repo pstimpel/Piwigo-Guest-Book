@@ -8,6 +8,7 @@ if (isset($_POST['submit']))
     'email_admin_on_comment' => isset($_POST['email_admin_on_comment']),
     'email_admin_on_comment_validation' => isset($_POST['email_admin_on_comment_validation']),
     'nb_comment_page' => $_POST['nb_comment_page'],
+    'activate_rating' => isset($_POST['activate_rating']),
     );
     
   conf_update_param('guestbook', serialize($conf['guestbook']));

@@ -26,13 +26,19 @@
 		{/if}&nbsp;
 		</div>
 		{/if}
+    
+    {if $comment.WEBSITE}
+      {assign var="author" value='<span class="commentAuthor"><a href="'|@cat:$comment.WEBSITE|@cat:'">'|@cat:$comment.AUTHOR|@cat:'</a></span>'}
+    {else}
+      {assign var="author" value='<span class="commentAuthor">'|@cat:$comment.AUTHOR|@cat:'</span>'}
+    {/if}
+    {assign var="date" value='<span class="commentDate">'|@cat:$comment.DATE|@cat:'</span>'}
+    
 
     <div class="commentHeader">
-      <span class="commentAuthor">{$comment.AUTHOR}</span> 
-      {if $comment.WEBSITE} - <a href="{$comment.WEBSITE}">{$comment.WEBSITE_NAME}</a>{/if}
-      {if $comment.EMAIL} - <a href="mailto:{$comment.EMAIL}">{$comment.EMAIL}</a>{/if}<br>
-      <span class="commentDate">{$comment.DATE}</span>
-      {if $comment.RATE}{$comment.STARS}{/if}
+      {'%s says on %s :'|@translate|@sprintf:$author:$date}<br>
+      {if $comment.STARS}{$comment.STARS}{/if}
+      {if $comment.EMAIL} <a href="mailto:{$comment.EMAIL}">{$comment.EMAIL}</a>{/if}
     </div>
 		{if isset($comment.IN_EDIT)}
 		<a name="edit_comment"></a>

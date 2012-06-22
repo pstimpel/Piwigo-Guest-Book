@@ -1,13 +1,18 @@
 {combine_css path=$GUESTBOOK_PATH|@cat:"template/style.css"}
-{combine_script id="jquery.raty" path=$GUESTBOOK_PATH|@cat:"template/jquery.raty/jquery.raty.min.js"}
+
+{if $comment_add.ACTIVATE_RATING}
+  {combine_script id="jquery.raty" path=$GUESTBOOK_PATH|@cat:"template/jquery.raty/jquery.raty.min.js"}
+  {footer_script}
+  $("#comment_rate").raty({ldelim}
+    path: "{$GUESTBOOK_PATH}template/jquery.raty/",
+    half: true
+  });
+  {/footer_script}
+{/if}
 
 {$MENUBAR}
 
 {footer_script}
-$("#comment_rate").raty({ldelim}
-  path: "{$GUESTBOOK_PATH}template/jquery.raty/",
-  half: true
-});
 $("#expandForm").click(function() {ldelim}
   $("#guestbookAdd").animate({ldelim}"width": "500px"}, function() {ldelim}
     $("#addComment").slideDown("slow");
@@ -47,10 +52,12 @@ $("#expandForm").click(function() {ldelim}
     </tr>
   {/if}
     <tr>
+  {if $comment_add.ACTIVATE_RATING}
     <td>
       <p>{'Rate'|@translate} :</p>
       <p><span id="comment_rate"></span></p>
     </td>
+  {/if}
     <td>
       <p><label for="website">{'Website'|@translate} :</label></p>
       <p><input type="text" name="website" id="website" size="30" value="{$comment_add.WEBSITE}"></p>
