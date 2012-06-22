@@ -1,0 +1,9 @@
+DIV.comment blockquote {
+  padding-right:280px;
+  margin-top:18px;
+  min-height:0;
+}
+
+p.commentHeader {
+  float:right;
+}
