@@ -30,7 +30,7 @@ function gb_init()
   // menubar
   if (script_basename() != 'admin')
   {
-    add_event_handler('blockmanager_apply', 'gb_menubar_apply');
+    add_event_handler('blockmanager_apply', 'gb_menubar_apply', EVENT_HANDLER_PRIORITY_NEUTRAL+10);
   }
   else
   {
