@@ -1,6 +1,10 @@
 <?php
 if (!defined('GUESTBOOK_PATH')) die('Hacking attempt!');
 
+include_once(PHPWG_ROOT_PATH.'include/functions_comment.inc.php');
+add_event_handler('user_comment_check_guestbook', 'user_comment_check',
+  EVENT_HANDLER_PRIORITY_NEUTRAL, 2);
+
 function insert_user_comment_guestbook( &$comm, $key, &$infos )
 {
   global $conf, $user, $page;
@@ -121,8 +125,10 @@ SELECT COUNT(1) FROM '.GUESTBOOK_TABLE.'
     }
   }
   
-  include_once(PHPWG_ROOT_PATH.'include/functions_comment.inc.php');
-  $comment_action = user_comment_check($comment_action, $comm);
+  // perform more spam check
+  $comment_action = trigger_event('user_comment_check_guestbook',
+      $comment_action, $comm
+    );
 
   if ( $comment_action!='reject' )
   {

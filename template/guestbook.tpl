@@ -66,7 +66,7 @@ $("#expandForm").click(function() {ldelim}
   </table>
   
   <p><label for="contentid">{'Comment'|@translate}* :</label></p>
-  <p><textarea name="content" id="contentid" rows="5" cols="60">{$comment_add.CONTENT}</textarea></p>
+  <p><textarea name="content" id="contentid" rows="10" cols="60">{$comment_add.CONTENT}</textarea></p>
   <p><input type="hidden" name="key" value="{$comment_add.KEY}">
     <input type="submit" value="{'Submit'|@translate}"> {'* : mandatory fields'|@translate}</p>
 </form>
