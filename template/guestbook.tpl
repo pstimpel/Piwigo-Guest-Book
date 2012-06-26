@@ -3,7 +3,7 @@
 {if $comment_add.ACTIVATE_RATING}
   {combine_script id="jquery.raty" path=$GUESTBOOK_PATH|@cat:"template/jquery.raty/jquery.raty.min.js"}
   {footer_script}
-  $("#comment_rate").raty({ldelim}
+  jQuery("#comment_rate").raty({ldelim}
     path: "{$GUESTBOOK_PATH}template/jquery.raty/",
     half: true
   });
@@ -13,9 +13,9 @@
 {$MENUBAR}
 
 {footer_script}
-$("#expandForm").click(function() {ldelim}
-  $("#guestbookAdd").animate({ldelim}"width": "500px"}, function() {ldelim}
-    $("#addComment").slideDown("slow");
+jQuery("#expandForm").click(function() {ldelim}
+  jQuery("#guestbookAdd").animate({ldelim}"width": "500px"}, function() {ldelim}
+    jQuery("#addComment").slideDown("slow");
   });
 });
 {/footer_script}
