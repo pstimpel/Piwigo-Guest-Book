@@ -20,7 +20,7 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['%s says on %s :'] = '%s üzerine diyor %s:';
+$lang['%s says on %s :'] = '%s bahsediyor %s:';
 $lang['* : mandatory fields'] = '*: zorunlu alanlar';
 $lang['Activate rating'] = 'Değerlendirmeyi etkinleştir';
 $lang['GuestBook'] = 'Ziyaretçi Defteri';
