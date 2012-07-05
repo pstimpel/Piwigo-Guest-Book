@@ -28,4 +28,6 @@ $lang['There are %d messages'] = 'شما %d پیام دارید';
 $lang['Website'] = 'وبسایت';
 $lang['invalid website address'] = 'آدرس وبسایت نامعتبر می باشد';
 $lang['not publicly visible'] = 'بطور همگانی نمایان نباشد';
+$lang['GuestBook'] = 'دفتر ثبت مهمان';
+$lang['Sign the guestbook'] = 'دفتر ثبت مهمان را امضا کنید';
 ?>
