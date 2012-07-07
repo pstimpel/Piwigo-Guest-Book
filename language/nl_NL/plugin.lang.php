@@ -29,5 +29,5 @@ $lang['Sign the guestbook'] = 'Teken het gastenboek';
 $lang['There are %d messages'] = 'Er zijn %d berichtten';
 $lang['Website'] = 'Website';
 $lang['invalid website address'] = 'foute website adres';
-$lang['not publicly visible'] = 'niet publieke zichtbaar';
+$lang['not publicly visible'] = 'niet publiek zichtbaar';
 ?>
