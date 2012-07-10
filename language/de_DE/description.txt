@@ -1,1 +1,1 @@
-Gästebuch zur Galerie hinzufügen 
+Fügt ein Gästebuch der Galerie hinzu.

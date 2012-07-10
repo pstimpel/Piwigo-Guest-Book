@@ -20,14 +20,14 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['%s says on %s :'] = '%s sagt an %s:';
-$lang['* : mandatory fields'] = '*:erforderliche Felder';
-$lang['Activate rating'] = 'Bewertung Aktivieren';
+$lang['%s says on %s :'] = '%s schrieb am %s:';
+$lang['* : mandatory fields'] = '* Mussfeld';
+$lang['Activate rating'] = 'Bewertung aktivieren';
 $lang['GuestBook'] = 'Gästebuch';
-$lang['Please enter your username'] = 'Bitte User Namen eingeben';
+$lang['Please enter your username'] = 'Bitte Autor angeben.';
 $lang['Sign the guestbook'] = 'Ins Gästebuch eintragen';
-$lang['There are %d messages'] = 'da sind %d Mitteilungen';
-$lang['Website'] = 'Web-Seite';
-$lang['invalid website address'] = 'ungültige Web-Seiten Adresse';
-$lang['not publicly visible'] = 'nicht öffentlich einsehbar';
+$lang['There are %d messages'] = '%d Mitteilungen';
+$lang['Website'] = 'Webseite';
+$lang['invalid website address'] = 'Ungültige Netzadresse!';
+$lang['not publicly visible'] = 'öffentlich nicht einsehbar';
 ?>
