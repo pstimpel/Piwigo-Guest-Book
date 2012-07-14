@@ -21,4 +21,13 @@
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
 $lang['GuestBook'] = 'Gjestebok';
+$lang['%s says on %s :'] = '%s sier om %s:';
+$lang['* : mandatory fields'] = '*:obligatoriske felt';
+$lang['Activate rating'] = 'Aktiver vurderinger';
+$lang['Please enter your username'] = 'Vennligst skriv brukernavnet';
+$lang['Sign the guestbook'] = 'Signer gjesteboken';
+$lang['There are %d messages'] = 'Det er %d meldinger';
+$lang['Website'] = 'Nettsted';
+$lang['invalid website address'] = 'ugyldig nettadresse';
+$lang['not publicly visible'] = 'ikke offentlig synlige';
 ?>
