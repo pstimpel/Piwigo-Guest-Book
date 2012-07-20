@@ -20,12 +20,12 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['%s says on %s :'] = 'ezt mondja %s ekkor: %s :';
+$lang['%s says on %s :'] = '%s üzenete, ekkor: %s';
 $lang['* : mandatory fields'] = '* : kötelező mezők';
 $lang['Activate rating'] = 'Értékelés bekapcsolása';
 $lang['GuestBook'] = 'Vendégkönyv';
-$lang['Please enter your username'] = 'Add meg a felhasználó nevedet';
-$lang['Sign the guestbook'] = 'Írd alá a vendégkönyvet';
+$lang['Please enter your username'] = 'Adja meg a felhasználónevét';
+$lang['Sign the guestbook'] = 'Írjon a vendégkönyvbe';
 $lang['There are %d messages'] = 'Üzenetek száma: %d';
 $lang['Website'] = 'Honlap';
 $lang['invalid website address'] = 'Érvénytelen honlap cím';
