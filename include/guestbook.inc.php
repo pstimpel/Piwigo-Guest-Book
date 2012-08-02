@@ -231,7 +231,7 @@ SELECT
       
     if ($conf['guestbook']['activate_rating'])
     {
-      $tpl_comment['STARS'] = get_stars($row['rate'], GUESTBOOK_PATH .'template/jquery.raty/');
+      $tpl_comment['STARS'] = get_stars($row['rate'], get_root_url().GUESTBOOK_PATH .'template/jquery.raty/');
     }
       
     if (is_admin() and !empty($row['email']))

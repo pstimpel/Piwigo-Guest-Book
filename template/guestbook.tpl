@@ -4,7 +4,7 @@
   {combine_script id="jquery.raty" path=$GUESTBOOK_PATH|@cat:"template/jquery.raty/jquery.raty.min.js"}
   {footer_script}
   jQuery("#comment_rate").raty({ldelim}
-    path: "{$GUESTBOOK_PATH}template/jquery.raty/",
+    path: "{$ROOT_URL}{$GUESTBOOK_PATH}template/jquery.raty/",
     half: true
   });
   {/footer_script}

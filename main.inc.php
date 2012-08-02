@@ -15,7 +15,6 @@ global $prefixeTable;
 
 define('GUESTBOOK_PATH' , PHPWG_PLUGINS_PATH . basename(dirname(__FILE__)) . '/');
 define('GUESTBOOK_TABLE' , $prefixeTable . 'guestbook');
-define('GUESTBOOK_URL', make_index_url(array('section' => 'guestbook')));
 define('GUESTBOOK_ADMIN', get_root_url().'admin.php?page=plugin-' . basename(dirname(__FILE__)));
 
 add_event_handler('init', 'gb_init');
@@ -48,6 +47,8 @@ function gb_init()
 function gb_menubar_apply($menu_ref_arr)
 {
   $menu = &$menu_ref_arr[0];
+  
+  define('GUESTBOOK_URL', make_index_url(array('section' => 'guestbook')));
   
   if ( ($block = $menu->get_block('mbMenu')) != null )
   {
