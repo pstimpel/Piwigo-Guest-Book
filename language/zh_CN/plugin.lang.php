@@ -20,10 +20,10 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['%s says on %s :'] = '%s 评论 %s :';
+$lang['%s says on %s :'] = '%s 留言 %s :';
 $lang['* : mandatory fields'] = '* : 必填字段';
 $lang['Activate rating'] = '启用评分';
-$lang['GuestBook'] = '在线评论';
+$lang['GuestBook'] = '留言本';
 $lang['Please enter your username'] = '请输入您的用户名';
 $lang['Sign the guestbook'] = '我要留言';
 $lang['There are %d messages'] = '有%d个留言';
