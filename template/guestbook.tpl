@@ -10,8 +10,6 @@
   {/footer_script}
 {/if}
 
-{$MENUBAR}
-
 {footer_script}
 jQuery("#expandForm").click(function() {ldelim}
   jQuery("#guestbookAdd").animate({ldelim}"width": "500px"}, function() {ldelim}
@@ -20,19 +18,22 @@ jQuery("#expandForm").click(function() {ldelim}
 });
 {/footer_script}
 
-<div id="content" class="content{if isset($MENUBAR)} contentWithMenu{/if}">
 
-<div class="titrePage">
-	<ul class="categoryActions">
-    {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
-	</ul>
-
-  <h2>{'GuestBook'|@translate}</h2>
-</div>{* <!-- titrePage --> *}
+{* <!-- Menubar & titrePage --> *}
+{if $themeconf.name == "stripped" or $themeconf.parent == "stripped"}
+  {include file=$ABS_GUESTBOOK_PATH|@cat:'template/themes/stripped.tpl'}
+  {assign var="clear" value="true"}
+{elseif $themeconf.name == "simple-grey" or $themeconf.parent == "simple"}
+  {include file=$ABS_GUESTBOOK_PATH|@cat:'template/themes/simple.tpl'}
+  {assign var="clear" value="true"}
+{else}
+  {include file=$ABS_GUESTBOOK_PATH|@cat:'template/themes/default.tpl'}
+{/if}
 
 {if isset($errors) or not empty($infos)}
 {include file='infos_errors.tpl'}
 {/if}
+
 
 {if isset($comment_add)}
 <div id="guestbookAdd">
@@ -86,5 +87,6 @@ jQuery("#expandForm").click(function() {ldelim}
 </div>
 {/if}
 
-
+{if $clear}<div style="clear: both;"></div>
+</div>{/if}
 </div>{* <!-- content --> *}

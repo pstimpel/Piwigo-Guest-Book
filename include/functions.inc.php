@@ -29,7 +29,6 @@ function is_valid_url($url)
     return filter_var($url, FILTER_VALIDATE_URL)!==false;
   }
   else
-  if (1)
   {
     $regex = '#^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$#i';
 

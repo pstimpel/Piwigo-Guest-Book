@@ -48,6 +48,7 @@ p.comment_count {
 .commentElement {
   padding:0;
   list-style:none;
+  text-align:left;
 }
   .commentElement .description {
     padding:7px !important;
