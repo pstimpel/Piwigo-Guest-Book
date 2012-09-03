@@ -1,4 +1,8 @@
 {combine_css path=$GUESTBOOK_PATH|@cat:"template/style.css"}
+{$themeconf.name}
+{if $themeconf.name|in_array:$clear_themes}
+  {combine_css path=$GUESTBOOK_PATH|@cat:"template/style-clear.css"}
+{/if}
 
 {if $comment_add.ACTIVATE_RATING}
   {combine_script id="jquery.raty" path=$GUESTBOOK_PATH|@cat:"template/jquery.raty/jquery.raty.min.js"}

@@ -317,6 +317,25 @@ if ($show_add_comment_form)
 
 $template->assign('ABS_GUESTBOOK_PATH', dirname(__FILE__).'/../');
 $template->assign('GUESTBOOK_PATH', GUESTBOOK_PATH);
+
+$template->assign('clear_themes', array(
+  'clear',
+  'gally-minimalist',
+  'hr_os',
+  'hr_os_xl',
+  'kardon',
+  'montblancxl',
+  'Naive',
+  'OS_glass_clear',
+  'p0w0',
+  'Pure_autumn',
+  'Pure_clear_blue',
+  'Pure_sky',
+  'Pure_tr_clear_blue',
+  'simple-white',
+  'VerticalWhite',
+  ));
+
 $template->set_filename('index', dirname(__FILE__).'/../template/guestbook.tpl');
 
 ?>
