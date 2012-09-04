@@ -47,7 +47,7 @@ function gb_init()
 
 function gb_menubar_apply($menu_ref_arr)
 {
-  $menu = &$menu_ref_arr[0];  
+  $menu = &$menu_ref_arr[0];
   
   if ( ($block = $menu->get_block('mbMenu')) != null )
   {
@@ -61,12 +61,12 @@ function gb_menubar_apply($menu_ref_arr)
 
 function gb_section_init()
 {
-  global $tokens, $page;
+  global $tokens, $page, $conf;
 
   if ($tokens[0] == 'guestbook')
   {
     $page['section'] = 'guestbook';
-    $page['title'] = l10n('GuestBook');
+    $page['title'] = '<a href="'.get_gallery_home_url().'">'.l10n('Home').'</a>'.$conf['level_separator'].l10n('GuestBook');
   }
 }
 
