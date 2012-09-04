@@ -1,5 +1,4 @@
 {combine_css path=$GUESTBOOK_PATH|@cat:"template/style.css"}
-{$themeconf.name}
 {if $themeconf.name|in_array:$clear_themes}
   {combine_css path=$GUESTBOOK_PATH|@cat:"template/style-clear.css"}
 {/if}
