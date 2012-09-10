@@ -26,4 +26,8 @@ $lang['%s says on %s :'] = '%s พูดเมื่อ %s :';
 $lang['Activate rating'] = 'เปิดเรตติ้ง';
 $lang['Sign the guestbook'] = 'ลงชื่อเข้าใช้สมุดเยี่ยมชม';
 $lang['invalid website address'] = 'ที่อยู่เว็บไซต์ไม่ถูกต้อง';
+$lang['* : mandatory fields'] = '*: จำเป็นต้องกรอก';
+$lang['Please enter your username'] = 'กรุณากรอกชื่อผู้ใช้งาน';
+$lang['There are %d messages'] = 'มี %d ข้อความ';
+$lang['not publicly visible'] = 'ไม่สามารถมองเห็นแบบเปิดเผย';
 ?>
