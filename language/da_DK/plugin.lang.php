@@ -20,14 +20,14 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['%s says on %s :'] = '%s Siger på %s :';
+$lang['%s says on %s :'] = '%s siger på %s:';
 $lang['* : mandatory fields'] = '*: Obligatoriske felter';
 $lang['Activate rating'] = 'Aktiver vurdering';
 $lang['GuestBook'] = 'Gæstebog';
 $lang['Please enter your username'] = 'Indtast dit brugernavn';
 $lang['Sign the guestbook'] = 'Skriv i gæstebogen';
 $lang['There are %d messages'] = 'Der er %d beskeder';
-$lang['Website'] = 'websted';
-$lang['invalid website address'] = 'ugyldig hjemmeside adresse';
+$lang['Website'] = 'hjemmeside';
+$lang['invalid website address'] = 'ugyldig hjemmesideadresse';
 $lang['not publicly visible'] = 'ikke offentligt tilgængelige';
 ?>
