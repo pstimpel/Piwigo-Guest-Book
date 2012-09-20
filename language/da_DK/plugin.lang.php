@@ -21,8 +21,8 @@
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
 $lang['%s says on %s :'] = '%s siger på %s:';
-$lang['* : mandatory fields'] = '*: Obligatoriske felter';
-$lang['Activate rating'] = 'Aktiver vurdering';
+$lang['* : mandatory fields'] = '*: obligatoriske felter';
+$lang['Activate rating'] = 'Aktiver bedømmelse';
 $lang['GuestBook'] = 'Gæstebog';
 $lang['Please enter your username'] = 'Indtast dit brugernavn';
 $lang['Sign the guestbook'] = 'Skriv i gæstebogen';
