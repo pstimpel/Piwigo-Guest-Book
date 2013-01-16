@@ -1,6 +1,8 @@
 <?php
 if (!defined('GUESTBOOK_PATH')) die('Hacking attempt!');
 
+global $user;
+
 include(GUESTBOOK_PATH . '/include/functions.inc.php');
 
 $url_self = empty($page['start']) ? GUESTBOOK_URL : add_url_params(GUESTBOOK_URL, array('start' => $page['start']));
@@ -115,7 +117,7 @@ if ( isset( $_POST['content'] ) )
 
   include_once(GUESTBOOK_PATH.'include/functions_comment.inc.php');
 
-  $comment_action = insert_user_comment_guestbook($comm, @$_POST['key'], $page['infos']);
+  $comment_action = insert_user_comment_guestbook($comm, @$_POST['key']);
 
   switch ($comment_action)
   {
@@ -302,39 +304,32 @@ if ($show_add_comment_form)
       ${$el} = htmlspecialchars( stripslashes($comm[$el]) );
     }
   }
+  if (is_classic_user())
+  {
+    $author = $user['username'];
+    $email = $user['email'];
+  }
+  if (empty($conf['comments_email_mandatory'])) // < 2.5 compatibility
+  {
+    $conf['comments_email_mandatory'] = false;
+  }
+
   $template->assign('comment_add',
       array(
         'F_ACTION' => $url_self,
         'KEY' => get_ephemeral_key(3),
         'CONTENT' => $content,
-        'SHOW_AUTHOR' => !is_classic_user(),
-        'AUTHOR' => $author ,
-        'WEBSITE' => $website ,
-        'EMAIL' => $email ,
+        'IS_LOGGED' => is_classic_user(),
+        'AUTHOR' => $author,
+        'WEBSITE' => $website,
+        'EMAIL' => $email,
         'ACTIVATE_RATING' => $conf['guestbook']['activate_rating'],
+        'EMAIL_MANDATORY' => $conf['comments_email_mandatory'],
       ));
 }
 
 $template->assign('ABS_GUESTBOOK_PATH', dirname(__FILE__).'/../');
 $template->assign('GUESTBOOK_PATH', GUESTBOOK_PATH);
-
-$template->assign('clear_themes', array(
-  'clear',
-  'gally-minimalist',
-  'hr_os',
-  'hr_os_xl',
-  'kardon',
-  'montblancxl',
-  'Naive',
-  'OS_glass_clear',
-  'p0w0',
-  'Pure_autumn',
-  'Pure_clear_blue',
-  'Pure_sky',
-  'Pure_tr_clear_blue',
-  'simple-white',
-  'VerticalWhite',
-  ));
 
 $template->set_filename('index', dirname(__FILE__).'/../template/guestbook.tpl');
 

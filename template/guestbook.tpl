@@ -1,7 +1,34 @@
 {combine_css path=$GUESTBOOK_PATH|@cat:"template/style.css"}
-{if $themeconf.name|in_array:$clear_themes}
-  {combine_css path=$GUESTBOOK_PATH|@cat:"template/style-clear.css"}
+{combine_script id="livevalidation" load="footer" path=$GUESTBOOK_PATH|@cat:"template/livevalidation.min.js"}
+
+{footer_script require='livevalidation'}
+{if !$comment_add.IS_LOGGED}
+var author = new LiveValidation('author', {ldelim} onlyOnSubmit: true });
+author.add(Validate.Presence, {ldelim} failureMessage: "{'Please enter your username'|@translate}" });
 {/if}
+
+{if $add_comment.EMAIL_MANDATORY and (!$add_comment.IS_LOGGED or empty($add_comment.EMAIL))}
+var email = new LiveValidation('email', {ldelim} onlyOnSubmit: true });
+email.add(Validate.Presence, {ldelim} failureMessage: "{'Please enter your e-mail'|@translate}" });
+email.add(Validate.Email, {ldelim} failureMessage: "{'mail address must be like xxx@yyy.eee (example : jack@altern.org)'|@translate}" });
+{/if}
+
+var website = new LiveValidation('website', {ldelim} onlyOnSubmit: true });
+website.add(Validate.Format, {ldelim} pattern: /^https?:\/\/(-\.)?([^\s\/?\.#-]+\.?)+(\/[^\s]*)?$/i,
+  failureMessage: "{'invalid website address'|@translate}"});
+
+var content = new LiveValidation('contentid', {ldelim} onlyOnSubmit: true });
+content.add(Validate.Presence, {ldelim} failureMessage: "{'Please enter a message'|@translate}" });
+  
+jQuery("#addComment").hide();
+jQuery("#guestbookAdd").css('width','180px');
+jQuery("#expandForm").click(function() {ldelim}
+  jQuery("#guestbookAdd").animate({ldelim}"width": "550px"}, function() {ldelim}
+    jQuery("#expandForm").slideUp();
+    jQuery("#addComment").slideDown("slow");
+  });
+});
+{/footer_script}
 
 {if $comment_add.ACTIVATE_RATING}
   {combine_script id="jquery.raty" path=$GUESTBOOK_PATH|@cat:"template/jquery.raty/jquery.raty.min.js"}
@@ -12,14 +39,6 @@
   });
   {/footer_script}
 {/if}
-
-{footer_script}
-jQuery("#expandForm").click(function() {ldelim}
-  jQuery("#guestbookAdd").animate({ldelim}"width": "500px"}, function() {ldelim}
-    jQuery("#addComment").slideDown("slow");
-  });
-});
-{/footer_script}
 
 
 {* <!-- Menubar & titrePage --> *}
@@ -40,40 +59,54 @@ jQuery("#expandForm").click(function() {ldelim}
 
 {if isset($comment_add)}
 <div id="guestbookAdd">
-<h4 id="expandForm">{'Sign the guestbook'|@translate}</h4>
-<form method="post" action="{$comment_add.F_ACTION}" id="addComment" style="display:none;">
-  <table>
-  {if $comment_add.SHOW_AUTHOR}
-    <tr>
-    <td>
-      <p><label for="author">{'Author'|@translate}* :</label></p>
-      <p><input type="text" name="author" id="author" value="{$comment_add.AUTHOR}"></p>
-    </td>
-    <td>
-      <p><label for="email">{'Email address'|@translate} ({'not publicly visible'|@translate}) :</label></p>
-      <p><input type="text" name="email" id="email" size="30" value="{$comment_add.EMAIL}"></p>
-    </td>
-    </tr>
-  {/if}
-    <tr>
-  {if $comment_add.ACTIVATE_RATING}
-    <td>
-      <p>{'Rate'|@translate} :</p>
-      <p><span id="comment_rate"></span></p>
-    </td>
-  {/if}
-    <td>
-      <p><label for="website">{'Website'|@translate} :</label></p>
-      <p><input type="text" name="website" id="website" size="30" value="{$comment_add.WEBSITE}"></p>
-    </td>
-    </tr>
-  </table>
-  
-  <p><label for="contentid">{'Comment'|@translate}* :</label></p>
-  <p><textarea name="content" id="contentid" rows="10" style="width:100%;">{$comment_add.CONTENT}</textarea></p>
-  <p><input type="hidden" name="key" value="{$comment_add.KEY}">
-    <input type="submit" value="{'Submit'|@translate}"> {'* : mandatory fields'|@translate}</p>
-</form>
+  <h4 id="expandForm">{'Sign the guestbook'|@translate}</h4>
+  <form method="post" action="{$comment_add.F_ACTION}" id="addComment" class="contact">
+    <table>
+    {if not $comment_add.IS_LOGGED or empty($comment_add.EMAIL)}
+      <tr>
+        <td>
+          <label for="author">{'Author'|@translate}* :</label>
+        {if $comment_add.IS_LOGGED}
+          {$comment_add.AUTHOR}
+          <input type="hidden" name="author" value="{$comment_add.AUTHOR}">
+        {else}
+          <input type="text" name="author" id="author" value="{$comment_add.AUTHOR}">
+        {/if}
+        </td>
+        <td>
+          <label for="email">{'Email address'|@translate}{if $comment_add.EMAIL_MANDATORY}*{/if} ({'not publicly visible'|@translate}) :</label>
+          <input type="text" name="email" id="email" value="{$comment_add.EMAIL}">
+        </td>
+      </tr>
+    {/if}
+      <tr>
+      {if $comment_add.ACTIVATE_RATING}
+        <td>
+          <label>{'Rate'|@translate} :</label>
+          <span id="comment_rate"></span>
+        </td>
+      {/if}
+        <td>
+          <label for="website">{'Website'|@translate} :</label>
+          <input type="text" name="website" id="website" value="{$comment_add.WEBSITE}">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <label for="contentid">{'Comment'|@translate}* :</label>
+          <textarea name="content" id="contentid" rows="7">{$comment_add.CONTENT}</textarea>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="submit" value="{'Send'|@translate}"> 
+          {'* : mandatory fields'|@translate}
+        </td>
+      </tr>
+    </table>
+    
+    <input type="hidden" name="key" value="{$comment_add.KEY}">
+  </form>
 </div>
 {/if}
 

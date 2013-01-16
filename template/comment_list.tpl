@@ -12,7 +12,7 @@
     {if isset($comment.U_CANCEL)}
       <a href="{$comment.U_CANCEL}">
         {'Cancel'|@translate}
-      </a>{if isset($comment.U_VALIDATE) or isset($comment.U_EDIT)} | {/if}
+      </a>{if isset($comment.U_VALIDATE)} | {/if}
     {/if}
     {if isset($comment.U_EDIT) and !isset($comment.IN_EDIT)}
       <a class="editComment" href="{$comment.U_EDIT}#edit_comment">

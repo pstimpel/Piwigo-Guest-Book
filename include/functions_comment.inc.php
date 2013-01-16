@@ -5,7 +5,7 @@ include_once(PHPWG_ROOT_PATH.'include/functions_comment.inc.php');
 add_event_handler('user_comment_check_guestbook', 'user_comment_check',
   EVENT_HANDLER_PRIORITY_NEUTRAL, 2);
 
-function insert_user_comment_guestbook( &$comm, $key, &$infos )
+function insert_user_comment_guestbook( &$comm, $key )
 {
   global $conf, $user, $page;
 
@@ -15,8 +15,7 @@ function insert_user_comment_guestbook( &$comm, $key, &$infos )
       'agent' => $_SERVER['HTTP_USER_AGENT']
     )
    );
-
-  $infos = array();
+  
   if (!$conf['guestbook']['comments_validation'] or is_admin())
   {
     $comment_action='validate'; //one of validate, moderate, reject
@@ -74,7 +73,7 @@ SELECT COUNT(*) AS user_exists
   {
     $comm['email'] = $user['email'];
   }
-  else if ( !empty($comm['email']) and !is_valid_email($comm['email']) )
+  else if ( !empty($comm['email']) and !gb_is_valid_email($comm['email']) )
   {
     array_push($page['errors'], l10n('mail address must be like xxx@yyy.eee (example : jack@altern.org)'));
     $comment_action='reject';
@@ -85,7 +84,7 @@ SELECT COUNT(*) AS user_exists
   {
     $comm['website'] = 'http://'.$comm['website'];
   }
-  if ( !empty($comm['website']) and !is_valid_url($comm['website']) )
+  if ( !empty($comm['website']) and !gb_is_valid_url($comm['website']) )
   {
     array_push($page['errors'], l10n('invalid website address'));
     $comment_action='reject';
@@ -120,7 +119,7 @@ SELECT COUNT(1) FROM '.GUESTBOOK_TABLE.'
     list($counter) = pwg_db_fetch_row(pwg_query($query));
     if ($counter > 0)
     {
-      array_push( $infos, l10n('Anti-flood system : please wait for a moment before trying to post another comment') );
+      array_push($page['errors'], l10n('Anti-flood system : please wait for a moment before trying to post another comment') );
       $comment_action='reject';
     }
   }

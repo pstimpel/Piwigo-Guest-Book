@@ -1,6 +1,8 @@
 <?php
 
 $lang['Please enter your username'] = 'Please enter your username';
+$lang['Please enter your e-mail'] = 'Please enter your e-mail';
+$lang['Please enter a message'] = 'Please enter a message';
 $lang['invalid website address'] = 'invalid website address';
 $lang['GuestBook'] = 'Guestbook';
 $lang['Sign the guestbook'] = 'Sign the guestbook';

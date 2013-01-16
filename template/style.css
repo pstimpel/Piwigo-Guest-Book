@@ -1,36 +1,64 @@
 #guestbookAdd {
   padding:15px;
-  width:180px;
+  width:550px;
   margin:10px auto 25px auto;
-  background: #333333;
-  background: -moz-linear-gradient(top, #333333 0%, #252525 100%);
-  background: -webkit-linear-gradient(top, #333333 0%, #252525 100%);
-  background: -o-linear-gradient(top, #333333 0%, #252525 100%);
-  background: -ms-linear-gradient(top, #333333 0%, #252525 100%);
-  background: linear-gradient(top, #333333 0%, #252525 100%);
   border-radius:5px;
   border:1px solid #555;
   box-shadow:5px 5px 5px rgba(0, 0, 0, 0.25);
-  color:#aaa;
+  overflow:hidden;
 }
 
 #guestbookAdd h4 {
   margin:0;
   cursor:pointer;
   text-align:center;
+  font-size:13px;
 }
-  #guestbookAdd h4:hover {
-    color:#fff;
-  }
+  
 
-#guestbookAdd table {
+.contact table {
   width:100%;
   text-align:left;
 }
-
-#addComment {
-  margin-top:5px;
+  .contact table td {
+    width:50%;
+    text-align:left;
+  }
+.contact label {
+  font-weight:bold;
+  display:block;
 }
+.contact input[type="text"], .contact textarea, .contact select {
+  border-radius:2px;
+  padding:3px;
+}
+.contact textarea {
+  width:535px;
+}
+.contact input[type="text"] {
+  width:260px;
+}
+
+
+.LV_validation_message{
+  display:block;
+  font-weight:bold;
+  margin:0 0 0 5px;
+}
+.LV_valid {
+   display:none;
+}
+.LV_invalid {
+  color:#cc0000;
+}
+.LV_invalid_field, 
+input.LV_invalid_field:hover, 
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover, 
+textarea.LV_invalid_field:active {
+  border: 1px solid #cc0000;
+}
+
 
 p.comment_count {
   text-align:center;
@@ -39,22 +67,27 @@ p.comment_count {
   font-size:1.1em;
 }
 
-#guestbookAdd p, .commentElement p {
+.commentElement p {
   text-align:left;
   margin-bottom:0.5em;
   margin-top:0.5em;
 }
 
 .commentElement {
-  padding:0;
+  padding:0 !important;
   list-style:none;
   text-align:left;
+  border:1px solid #555;
+  border-radius:5px;
+  margin:5px;
+  overflow:hidden;
 }
   .commentElement .description {
     padding:7px !important;
+    min-height:0;
   }
   .commentHeader  {
-    background:#444;
+    background:rgba(127,127,127,0.5);
     margin:-7px;
     margin-bottom:0;
     padding:6px;

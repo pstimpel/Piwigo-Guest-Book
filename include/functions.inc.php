@@ -2,29 +2,33 @@
 
 if (!defined('GUESTBOOK_PATH')) die('Hacking attempt!');
 
-if (!function_exists('is_valid_email'))
+function gb_is_valid_email($mail_address)
 {
-  function is_valid_email($mail_address)
+  if (function_exists('email_check_format'))
   {
-    if (version_compare(PHP_VERSION, '5.2.0') >= 0)
-    {
-      return filter_var($mail_address, FILTER_VALIDATE_EMAIL)!==false;
-    }
-    else
-    {
-      $atom   = '[-a-z0-9!#$%&\'*+\\/=?^_`{|}~]';   // before  arobase
-      $domain = '([a-z0-9]([-a-z0-9]*[a-z0-9]+)?)'; // domain name
-      $regex = '/^' . $atom . '+' . '(\.' . $atom . '+)*' . '@' . '(' . $domain . '{1,63}\.)+' . $domain . '{2,63}$/i';
+    return email_check_format($email_address);
+  }
+  else if (version_compare(PHP_VERSION, '5.2.0') >= 0)
+  {
+    return filter_var($mail_address, FILTER_VALIDATE_EMAIL)!==false;
+  }
+  else
+  {
+    $atom   = '[-a-z0-9!#$%&\'*+\\/=?^_`{|}~]';   // before  arobase
+    $domain = '([a-z0-9]([-a-z0-9]*[a-z0-9]+)?)'; // domain name
+    $regex = '/^' . $atom . '+' . '(\.' . $atom . '+)*' . '@' . '(' . $domain . '{1,63}\.)+' . $domain . '{2,63}$/i';
 
-      if (!preg_match($regex, $mail_address)) return false;
-      return true;
-    }
+    return (bool)preg_match($regex, $mail_address);
   }
 }
 
-function is_valid_url($url)
+function gb_is_valid_url($url)
 {
-  if (version_compare(PHP_VERSION, '5.2.0') >= 0)
+  if (function_exists('url_check_format'))
+  {
+    return url_check_format($url);
+  }
+  else if (version_compare(PHP_VERSION, '5.2.0') >= 0)
   {
     return filter_var($url, FILTER_VALIDATE_URL)!==false;
   }
@@ -32,8 +36,7 @@ function is_valid_url($url)
   {
     $regex = '#^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$#i';
 
-    if (!preg_match($regex, $url)) return false;
-    return true;
+    return (bool)preg_match($regex, $url);
   }
 }
 
