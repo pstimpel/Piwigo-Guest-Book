@@ -30,4 +30,6 @@ $lang['There are %d messages'] = 'Υπάρχουν %d μηνύματα';
 $lang['Website'] = 'Δικτυακός Τόπος';
 $lang['invalid website address'] = 'μη έγκυρη διεύθυνση δικτυακού τόπου';
 $lang['not publicly visible'] = 'δεν είναι ορατή δημοσίως';
+$lang['Please enter your e-mail'] = 'Παρακαλώ εισάγετε το e-mail σας';
+$lang['Please enter a message'] = 'Παρακαλώ εισάγετε ένα μήνυμα';
 ?>
