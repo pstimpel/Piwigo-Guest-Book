@@ -30,4 +30,6 @@ $lang['There are %d messages'] = 'Der er %d beskeder';
 $lang['Website'] = 'hjemmeside';
 $lang['invalid website address'] = 'ugyldig hjemmesideadresse';
 $lang['not publicly visible'] = 'ikke offentligt tilgængelige';
+$lang['Please enter your e-mail'] = 'Indtast din e-mailadresse';
+$lang['Please enter a message'] = 'Skriv en besked';
 ?>
