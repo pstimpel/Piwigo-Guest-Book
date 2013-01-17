@@ -30,4 +30,6 @@ $lang['There are %d messages'] = '有%d个留言';
 $lang['Website'] = '网站';
 $lang['invalid website address'] = '无效网站地址';
 $lang['not publicly visible'] = '不公开';
+$lang['Please enter a message'] = '请输入信息';
+$lang['Please enter your e-mail'] = '请输入你的电子邮件';
 ?>
