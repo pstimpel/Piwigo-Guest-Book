@@ -30,4 +30,6 @@ $lang['There are %d messages'] = 'Saņemtas  %d ziņas ';
 $lang['Website'] = 'Tīmekļa vietne';
 $lang['invalid website address'] = 'kļūdaina vietnes adrese';
 $lang['not publicly visible'] = 'nav publiski redzams';
+$lang['Please enter your e-mail'] = 'Lūdzu ievadiet savu e-pasta adresi';
+$lang['Please enter a message'] = 'Lūdzu ievadiet ziņojumu';
 ?>
