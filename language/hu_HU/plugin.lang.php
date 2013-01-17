@@ -30,4 +30,6 @@ $lang['There are %d messages'] = 'Üzenetek száma: %d';
 $lang['Website'] = 'Honlap';
 $lang['invalid website address'] = 'Érvénytelen honlap cím';
 $lang['not publicly visible'] = 'nyilvánosan nem látható (nem publikus)';
+$lang['Please enter a message'] = 'Írja be az üzenetet';
+$lang['Please enter your e-mail'] = 'Írja be az e-mail címet';
 ?>
