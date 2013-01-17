@@ -30,4 +30,6 @@ $lang['There are %d messages'] = 'Je zap&iacute;san&yacute;ch %d odkazov';
 $lang['Website'] = 'Webov&aacute; str&aacute;nka';
 $lang['invalid website address'] = 'neplatn&aacute; webov&aacute; adresa';
 $lang['not publicly visible'] = 'verejne nezvidite&#314;nen&eacute;';
+$lang['Please enter your e-mail'] = 'Vložte prosím Váš e-mail';
+$lang['Please enter a message'] = 'Vložte prosím správu';
 ?>
