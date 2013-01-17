@@ -30,4 +30,6 @@ $lang['Please enter your username'] = 'Ole hyvä ja anna käyttäjänimesi';
 $lang['GuestBook'] = 'Vieraskirja';
 $lang['* : mandatory fields'] = '* : pakolliset kentät';
 $lang['%s says on %s :'] = '%s sanoi %s :';
+$lang['Please enter a message'] = 'Kirjoita viesti';
+$lang['Please enter your e-mail'] = 'Anna sähköpostiosoitteesi';
 ?>
