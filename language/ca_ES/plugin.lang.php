@@ -30,4 +30,6 @@ $lang['There are %d messages'] = 'Hi ha %d missatges';
 $lang['Website'] = 'Lloc web';
 $lang['invalid website address'] = 'adreça de lloc web no vàlida';
 $lang['not publicly visible'] = 'no visible públicament';
+$lang['Please enter a message'] = 'Introduïu un missatge';
+$lang['Please enter your e-mail'] = 'Introduïu el vostre correu electrònic';
 ?>
