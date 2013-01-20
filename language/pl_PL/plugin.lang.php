@@ -30,4 +30,6 @@ $lang['There are %d messages'] = 'Jest %d wiadomości';
 $lang['Website'] = 'Strona www';
 $lang['invalid website address'] = 'błędny adres strony www';
 $lang['not publicly visible'] = 'niewidoczne publicznie';
+$lang['Please enter a message'] = 'Wpisz wiadomość';
+$lang['Please enter your e-mail'] = 'Wpisz swój e-mail';
 ?>
