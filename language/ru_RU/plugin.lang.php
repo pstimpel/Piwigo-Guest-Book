@@ -30,4 +30,6 @@ $lang['There are %d messages'] = 'Сообщений: %d';
 $lang['Website'] = 'Сайт';
 $lang['invalid website address'] = 'неверный адрес веб-сайта';
 $lang['not publicly visible'] = 'не видимы';
+$lang['Please enter a message'] = 'Пожадуйста, введите сообщение';
+$lang['Please enter your e-mail'] = 'Пожалуйста, введите свой e-mail';
 ?>
