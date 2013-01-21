@@ -30,4 +30,6 @@ $lang['Please enter your username'] = 'Palun sisesta oma kasutajanimi';
 $lang['GuestBook'] = 'Külalisteraamat';
 $lang['Activate rating'] = 'Aktiveeri hindamine';
 $lang['* : mandatory fields'] = '*:kohustuslikud väljad';
+$lang['Please enter a message'] = 'Palun sisesta sõnum';
+$lang['Please enter your e-mail'] = 'Palun sisesta oma e-mail';
 ?>
