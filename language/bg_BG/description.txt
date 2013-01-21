@@ -1,1 +1,1 @@
-plugin.lang.php [Bulgarian language] - Български
+GuestBook прлъгин - добавя книга за гости

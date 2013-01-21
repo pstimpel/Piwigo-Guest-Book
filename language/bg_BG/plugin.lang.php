@@ -30,4 +30,6 @@ $lang['%s says on %s :'] = '%s казва на %s :';
 $lang['invalid website address'] = 'невалиден уебсайт адрес';
 $lang['Website'] = 'Уебсайт';
 $lang['There are %d messages'] = 'Имате %d съобщения';
+$lang['Please enter your e-mail'] = 'Моля въведете вашия имейл';
+$lang['Please enter a message'] = 'Моля напишете съобщение';
 ?>
