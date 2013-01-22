@@ -20,14 +20,16 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['%s says on %s :'] = '%s در %s میگه:';
+$lang['%s says on %s :'] = '%s در %s می‌گوید:';
 $lang['* : mandatory fields'] = '* : فیلد الزامی';
-$lang['Activate rating'] = 'فال کردن امتیازدهی';
+$lang['Activate rating'] = 'فعال کردن امتیازدهی';
 $lang['Please enter your username'] = 'نام کاربری خود را وارد کنید';
-$lang['There are %d messages'] = 'شما %d پیام دارید';
+$lang['There are %d messages'] = '%d پیام موجود است';
 $lang['Website'] = 'وبسایت';
-$lang['invalid website address'] = 'آدرس وبسایت نامعتبر می باشد';
+$lang['invalid website address'] = 'آدرس وبسایت درست نمی‌باشد';
 $lang['not publicly visible'] = 'بطور همگانی نمایان نباشد';
 $lang['GuestBook'] = 'دفتر ثبت مهمان';
 $lang['Sign the guestbook'] = 'دفتر ثبت مهمان را امضا کنید';
+$lang['Please enter your e-mail'] = 'ایمیل خود را بنویسید';
+$lang['Please enter a message'] = 'یک پیام بنویسید';
 ?>
