@@ -2,7 +2,7 @@
 
 $lang['Please enter your username'] = 'Veuillez renseigner votre nom';
 $lang['Please enter your e-mail'] = 'Veuillez renseigner votre e-mail';
-$lang['Please enter a message'] = 'Veuillez écrire un message';
+$lang['Please enter a message'] = 'Veuillez Ã©crire un message';
 $lang['invalid website address'] = 'adresse du site web invalide';
 $lang['GuestBook'] = 'Livre d\'or';
 $lang['Sign the guestbook'] = 'Signer le livre d\'or';
