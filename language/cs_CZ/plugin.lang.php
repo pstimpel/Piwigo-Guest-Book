@@ -30,4 +30,6 @@ $lang['There are %d messages'] = '%d zpráv';
 $lang['Website'] = 'Webová adresa';
 $lang['invalid website address'] = 'špatně zadaná webová adresa';
 $lang['not publicly visible'] = 'neveřejné';
+$lang['Please enter a message'] = 'Váš vzkaz:';
+$lang['Please enter your e-mail'] = 'Váš e-mail:';
 ?>
