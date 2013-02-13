@@ -30,4 +30,6 @@ $lang['* : mandatory fields'] = '*: จำเป็นต้องกรอก';
 $lang['Please enter your username'] = 'กรุณากรอกชื่อผู้ใช้งาน';
 $lang['There are %d messages'] = 'มี %d ข้อความ';
 $lang['not publicly visible'] = 'ไม่สามารถมองเห็นแบบเปิดเผย';
+$lang['Please enter a message'] = 'กรุณากรอกข้อความก่อนทำการส่ง';
+$lang['Please enter your e-mail'] = 'กรุณากรอกอีเมลของคุณ';
 ?>
