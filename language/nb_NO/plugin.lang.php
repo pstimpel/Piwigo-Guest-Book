@@ -30,4 +30,6 @@ $lang['There are %d messages'] = 'Det er %d meldinger';
 $lang['Website'] = 'Nettsted';
 $lang['invalid website address'] = 'ugyldig nettadresse';
 $lang['not publicly visible'] = 'ikke offentlig synlige';
+$lang['Please enter a message'] = 'Vennligst skriv en melding';
+$lang['Please enter your e-mail'] = 'Vennligst skriv inn epost';
 ?>
