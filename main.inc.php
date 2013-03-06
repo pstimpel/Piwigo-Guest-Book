@@ -65,9 +65,18 @@ function gb_section_init()
 
   if ($tokens[0] == 'guestbook')
   {
+    add_event_handler('loc_begin_page_header', 'gb_page_header');
+    
     $page['section'] = 'guestbook';
-    $page['title'] = '<a href="'.get_gallery_home_url().'">'.l10n('Home').'</a>'.$conf['level_separator'].l10n('GuestBook');
+    $page['title'] = l10n('GuestBook');
+    $page['section_title'] = '<a href="'.get_gallery_home_url().'">'.l10n('Home').'</a>'.$conf['level_separator'].l10n('GuestBook');
   }
+}
+
+function gb_page_header()
+{
+  global $page;
+  $page['body_id'] = 'theGuestBook';
 }
 
 function gb_index() 
