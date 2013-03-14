@@ -73,7 +73,7 @@ SELECT COUNT(*) AS user_exists
   {
     $comm['email'] = $user['email'];
   }
-  else if ( !empty($comm['email']) and !gb_is_valid_email($comm['email']) )
+  else if ( !empty($comm['email']) and !email_check_format($comm['email']) )
   {
     array_push($page['errors'], l10n('mail address must be like xxx@yyy.eee (example : jack@altern.org)'));
     $comment_action='reject';
@@ -84,7 +84,7 @@ SELECT COUNT(*) AS user_exists
   {
     $comm['website'] = 'http://'.$comm['website'];
   }
-  if ( !empty($comm['website']) and !gb_is_valid_url($comm['website']) )
+  if ( !empty($comm['website']) and !url_check_format($comm['website']) )
   {
     array_push($page['errors'], l10n('invalid website address'));
     $comment_action='reject';
