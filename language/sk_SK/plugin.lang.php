@@ -32,4 +32,7 @@ $lang['invalid website address'] = 'neplatn&aacute; webov&aacute; adresa';
 $lang['not publicly visible'] = 'verejne nezvidite&#314;nen&eacute;';
 $lang['Please enter your e-mail'] = 'Vložte prosím Váš e-mail';
 $lang['Please enter a message'] = 'Vložte prosím správu';
+$lang['Guests (not registered) permissions :'] = 'Prístup hostí (neregistrovaných)';
+$lang['view comments'] = 'zobraziť komentáre';
+$lang['add comment'] = 'pridať komentár';
 ?>
