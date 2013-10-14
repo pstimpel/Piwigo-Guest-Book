@@ -32,4 +32,7 @@ $lang['invalid website address'] = 'kļūdaina vietnes adrese';
 $lang['not publicly visible'] = 'nav publiski redzams';
 $lang['Please enter your e-mail'] = 'Lūdzu ievadiet savu e-pasta adresi';
 $lang['Please enter a message'] = 'Lūdzu ievadiet ziņojumu';
+$lang['Guests (not registered) permissions :'] = 'Viesa (nereģistrēts) atļaujas:';
+$lang['view comments'] = 'skatīt komentārus';
+$lang['add comment'] = 'pievienot komentāru';
 ?>
