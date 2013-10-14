@@ -32,4 +32,7 @@ $lang['There are %d messages'] = 'Estas %d mesaĝoj';
 $lang['Website'] = 'Retejo';
 $lang['invalid website address'] = 'nevalida reteja adreso';
 $lang['not publicly visible'] = 'ne publike videbla';
+$lang['Guests (not registered) permissions :'] = 'Permesiloj de gastoj (neregistritaj):';
+$lang['add comment'] = 'aldoni komenton';
+$lang['view comments'] = 'vidi komentojn';
 ?>
