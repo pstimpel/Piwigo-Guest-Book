@@ -105,7 +105,7 @@ if (isset($_GET['action']))
 // +-----------------------------------------------------------------------+
 // |                                add comment                            |
 // +-----------------------------------------------------------------------+
-if ( isset( $_POST['content'] ) )
+if ( isset( $_POST['content'] ) && (!is_a_guest() || $conf['guestbook']['guest_can_add']))
 {
   $comm = array(
     'author' => trim( @$_POST['author'] ),
@@ -288,7 +288,7 @@ SELECT
   }
 }
 
-$show_add_comment_form = true;
+$show_add_comment_form = !is_a_guest() || $conf['guestbook']['guest_can_add'];
 if (isset($edit_comment))
 {
   $show_add_comment_form = false;
@@ -328,9 +328,7 @@ if ($show_add_comment_form)
       ));
 }
 
-$template->assign('ABS_GUESTBOOK_PATH', dirname(__FILE__).'/../');
+$template->assign('ABS_GUESTBOOK_PATH', realpath(GUESTBOOK_PATH) . '/');
 $template->assign('GUESTBOOK_PATH', GUESTBOOK_PATH);
 
-$template->set_filename('index', dirname(__FILE__).'/../template/guestbook.tpl');
-
-?>
+$template->set_filename('index', realpath(GUESTBOOK_PATH . 'template/guestbook.tpl'));

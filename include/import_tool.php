@@ -1,12 +1,11 @@
 <?php
 define('PHPWG_ROOT_PATH','../../../');
-include_once( PHPWG_ROOT_PATH.'include/common.inc.php' );
+include_once(PHPWG_ROOT_PATH.'include/common.inc.php');
 
 if (!is_admin()) die('Access denied');
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>GuestBook import</title>
@@ -57,9 +56,9 @@ SELECT * FROM '.COMMENTS_TABLE.'
 if ($show_form)
 {
 ?>
-Just enter the id of your old guestbook picture (the Id can be found a the picture edition page, near the thumbnail) and click the <b>import</b> button.
+Just enter the ID of your old guestbook picture (the ID can be found a the picture edition page, near the thumbnail) and click the <b>import</b> button.
 <form action="" method="post">
-<label>Image id. <input type="text" size="5" name="image_id"></label><br>
+<label>Image ID : <input type="text" size="5" name="image_id"></label><br>
 <input type="submit" value="import">
 </form>
 

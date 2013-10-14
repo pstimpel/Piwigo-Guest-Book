@@ -1,5 +1,5 @@
 <?php
-if (!defined('PHPWG_ROOT_PATH')) die('Hacking attempt!');
+if (!defined('GUESTBOOK_PATH')) die('Hacking attempt!');
 
 include_once(PHPWG_ROOT_PATH.'admin/include/functions.php');
 
@@ -108,6 +108,6 @@ $template->assign('LIST', implode(',', $list) );
 $template->assign('F_ACTION', GUESTBOOK_ADMIN . '-pending');
 
 
-$template->set_filename('guestbook', dirname(__FILE__).'/template/pending.tpl');
+$template->set_filename('guestbook', realpath(GUESTBOOK_PATH . 'admin/template/pending.tpl'));
 
 ?>

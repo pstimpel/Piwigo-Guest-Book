@@ -12,5 +12,8 @@ $lang['* : mandatory fields'] = '* : mandatory fields';
 $lang['There are %d messages'] = 'There are %d messages';
 $lang['Activate rating'] = 'Activate rating';
 $lang['%s says on %s :'] = '%s says on %s :';
+$lang['Guests (not registered) permissions :'] = 'Guests (not registered) permissions :';
+$lang['view comments'] = 'view comments';
+$lang['add comment'] = 'add comment';
 
 ?>

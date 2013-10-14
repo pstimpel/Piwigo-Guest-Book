@@ -167,7 +167,7 @@ INSERT INTO '.GUESTBOOK_TABLE.'(
     {
       include_once(PHPWG_ROOT_PATH.'include/functions_mail.inc.php');
 
-      $comment_url = get_absolute_root_url().add_url_params(GUESTBOOK_URL, array('comment_id'=>$comm['id']));
+      $comment_url = add_url_params(GUESTBOOK_URL, array('comment_id'=>$comm['id']));
 
       $keyargs_content = array
       (
@@ -236,7 +236,7 @@ $user_where_clause.'
     {
       include_once(PHPWG_ROOT_PATH.'include/functions_mail.inc.php');
       
-      $comment_url = get_absolute_root_url().add_url_params(GUESTBOOK_URL, array('comment_id'=>$comm['id']));
+      $comment_url = add_url_params(GUESTBOOK_URL, array('comment_id'=>$comm['id']));
 
       $keyargs_content = array
       (
@@ -321,5 +321,3 @@ UPDATE '.GUESTBOOK_TABLE.'
 ;';
   pwg_query($query);
 }
-
-?>

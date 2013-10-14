@@ -23,6 +23,3 @@ $template->assign(array(
 ));
 
 $template->assign_var_from_handle('ADMIN_CONTENT', 'guestbook');
-
-
-?>

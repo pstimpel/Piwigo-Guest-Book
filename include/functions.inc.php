@@ -38,5 +38,3 @@ function get_stars($score, $path)
   
   return $html;
 }
-
-?>
