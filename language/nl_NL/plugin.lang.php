@@ -22,14 +22,17 @@
 // +-----------------------------------------------------------------------+
 $lang['%s says on %s :'] = '%s schreef het volgende op %s:';
 $lang['* : mandatory fields'] = '* : verplicht veld';
-$lang['Activate rating'] = 'Activeren van waardering';
+$lang['Activate rating'] = 'Activeer waardering';
 $lang['GuestBook'] = 'Gastenboek';
 $lang['Please enter your username'] = 'Geef aub uw gebruikersnaam in';
 $lang['Sign the guestbook'] = 'Teken het gastenboek';
 $lang['There are %d messages'] = 'Er zijn %d berichten';
-$lang['Website'] = 'Website (incl. http://)';
-$lang['invalid website address'] = 'Fout website adres';
+$lang['Website'] = 'Website';
+$lang['invalid website address'] = 'Ongeldig website adres';
 $lang['not publicly visible'] = 'niet publiek zichtbaar';
 $lang['Please enter a message'] = 'Geef aub uw bericht in';
 $lang['Please enter your e-mail'] = 'Geef aub uw email-adres in';
+$lang['Guests (not registered) permissions :'] = 'Rechten van gasten (niet geregistreerd)';
+$lang['add comment'] = 'geef commentaar';
+$lang['view comments'] = 'bekijk commentaar';
 ?>
