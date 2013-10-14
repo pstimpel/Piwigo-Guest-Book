@@ -32,4 +32,7 @@ $lang['invalid website address'] = 'geçersiz web sitesi adresi';
 $lang['not publicly visible'] = 'herkese görünür değil';
 $lang['Please enter a message'] = 'Lütfen bir mesaj girin';
 $lang['Please enter your e-mail'] = 'Lütfen e-posta adresinizi girin';
+$lang['Guests (not registered) permissions :'] = 'Misafir (kayıtlı olmayan) izinleri:';
+$lang['add comment'] = 'yorum ekle';
+$lang['view comments'] = 'yorumları gör';
 ?>
