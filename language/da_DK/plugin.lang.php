@@ -32,4 +32,7 @@ $lang['invalid website address'] = 'ugyldig hjemmesideadresse';
 $lang['not publicly visible'] = 'ikke offentligt tilgængelig';
 $lang['Please enter your e-mail'] = 'Skriv din e-mailadresse';
 $lang['Please enter a message'] = 'Skriv en besked';
+$lang['Guests (not registered) permissions :'] = 'Rettigheder for gæster (ikke-registrerede):';
+$lang['add comment'] = 'tilføj kommentar';
+$lang['view comments'] = 'vis kommentarer';
 ?>
