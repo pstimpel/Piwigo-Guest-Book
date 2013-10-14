@@ -8,7 +8,7 @@ include_once(PHPWG_PLUGINS_PATH . GUESTBOOK_ID . '/include/install.inc.php');
 function plugin_install()
 {
   guestbook_install();
-  define('guestbook_installed', true
+  define('guestbook_installed', true);
 }
 
 // Activation
