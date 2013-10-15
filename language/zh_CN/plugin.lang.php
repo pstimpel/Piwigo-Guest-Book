@@ -32,4 +32,7 @@ $lang['invalid website address'] = '无效网站地址';
 $lang['not publicly visible'] = '不公开';
 $lang['Please enter a message'] = '请输入信息';
 $lang['Please enter your e-mail'] = '请输入你的电子邮件';
+$lang['Guests (not registered) permissions :'] = '游客(未注册)权限';
+$lang['add comment'] = '添加评论';
+$lang['view comments'] = '查看评论';
 ?>
