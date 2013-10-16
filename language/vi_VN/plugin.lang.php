@@ -32,4 +32,7 @@ $lang['There are %d messages'] = 'Có %d tin nhắn';
 $lang['Website'] = 'Website';
 $lang['invalid website address'] = 'địa chỉ website không hợp lệ';
 $lang['not publicly visible'] = 'không hiển thị rộng rãi';
+$lang['Guests (not registered) permissions :'] = 'Quyền của khách (không đăng ký):';
+$lang['add comment'] = 'thêm bình luận';
+$lang['view comments'] = 'xem bình luận';
 ?>
