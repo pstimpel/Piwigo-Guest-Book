@@ -32,4 +32,7 @@ $lang['invalid website address'] = 'عنوان الموقع غير صحيح ';
 $lang['not publicly visible'] = 'لن يكون ظاهر';
 $lang['Please enter a message'] = 'الرجاء إدخال ‌الرسالة';
 $lang['Please enter your e-mail'] = 'من فضلك ادخل بريدك الإلكتروني';
+$lang['Guests (not registered) permissions :'] = 'صلاحيات الزوار (غير المسجلين):';
+$lang['add comment'] = 'إضافة تعليق';
+$lang['view comments'] = 'مشاهدة التعليقات';
 ?>
