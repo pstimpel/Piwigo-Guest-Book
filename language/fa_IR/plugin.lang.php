@@ -32,4 +32,7 @@ $lang['GuestBook'] = 'دفتر ثبت مهمان';
 $lang['Sign the guestbook'] = 'دفتر ثبت مهمان را امضا کنید';
 $lang['Please enter your e-mail'] = 'ایمیل خود را بنویسید';
 $lang['Please enter a message'] = 'یک پیام بنویسید';
+$lang['Guests (not registered) permissions :'] = 'دسترسی‌های مهمان‌ها (کاربرانِ عضو نشده):';
+$lang['add comment'] = 'افزودن دیدگاه';
+$lang['view comments'] = 'دیدن دیدگاه‌ها';
 ?>
