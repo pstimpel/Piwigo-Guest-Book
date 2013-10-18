@@ -34,4 +34,5 @@ $lang['Please enter a message'] = 'Váš vzkaz:';
 $lang['Please enter your e-mail'] = 'Váš e-mail:';
 $lang['view comments'] = 'zobrazit komentáře';
 $lang['add comment'] = 'přidat komentář';
+$lang['Guests (not registered) permissions :'] = 'Oprávnění hostů (neregistrovaných uživatelů):';
 ?>
