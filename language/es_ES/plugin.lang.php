@@ -32,4 +32,7 @@ $lang['invalid website address'] = 'Dirección web incorrecta';
 $lang['not publicly visible'] = 'No se hace visible públicamente';
 $lang['Please enter a message'] = 'Por favor, introduzca un mensaje';
 $lang['Please enter your e-mail'] = 'Por favor, introduzca su dirección de e-mail';
+$lang['Guests (not registered) permissions :'] = 'Invitados (no registrados) permisos:';
+$lang['add comment'] = 'Añadir comentarios';
+$lang['view comments'] = 'Ver comentarios';
 ?>
