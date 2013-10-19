@@ -32,4 +32,7 @@ $lang['There are %d messages'] = 'Det till %d meddelanden';
 $lang['Website'] = 'Webbsida';
 $lang['invalid website address'] = 'Ogiltig webadress';
 $lang['not publicly visible'] = 'Ej publikt synlig';
+$lang['Guests (not registered) permissions :'] = 'Gästrättigheter (gäst = oregistrerad):';
+$lang['add comment'] = 'kommentera';
+$lang['view comments'] = 'visa kommentarer';
 ?>
