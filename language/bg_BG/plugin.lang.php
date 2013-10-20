@@ -32,4 +32,7 @@ $lang['Website'] = 'Уебсайт';
 $lang['There are %d messages'] = 'Имате %d съобщения';
 $lang['Please enter your e-mail'] = 'Моля въведете вашия имейл';
 $lang['Please enter a message'] = 'Моля напишете съобщение';
+$lang['view comments'] = 'преглед коментари';
+$lang['add comment'] = 'добави коментар';
+$lang['Guests (not registered) permissions :'] = 'Права за Гости (нерегистрирани):';
 ?>
