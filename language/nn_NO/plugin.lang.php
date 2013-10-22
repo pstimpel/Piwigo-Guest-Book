@@ -32,4 +32,7 @@ $lang['There are %d messages'] = 'Det finst %d meldingar';
 $lang['Website'] = 'Nettside';
 $lang['invalid website address'] = 'ugyldig nettsideadresse';
 $lang['not publicly visible'] = 'ikkje synleg for alle';
+$lang['Guests (not registered) permissions :'] = 'Rettar for gjester (ikkje registrerte):';
+$lang['add comment'] = 'legg til kommentar';
+$lang['view comments'] = 'vis kommentar';
 ?>
