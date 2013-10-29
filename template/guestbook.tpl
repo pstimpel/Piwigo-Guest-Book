@@ -29,9 +29,9 @@ jQuery("#expandForm").click(function() {ldelim}
   });
 });
 
-jQuery("#website").on('blur', function() {
+jQuery("#website").on('blur', function() {ldelim}
   var val = $(this).val();
-  if (val.substr(0, 4) != 'http') {
+  if (val.substr(0, 4) != 'http') {ldelim}
     $(this).val('http://'+ val);
   }
 });
