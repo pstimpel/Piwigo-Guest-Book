@@ -1,7 +1,7 @@
 {combine_css path=$GUESTBOOK_PATH|@cat:"template/style.css"}
 {combine_script id="livevalidation" load="footer" path=$GUESTBOOK_PATH|@cat:"template/livevalidation.min.js"}
 
-{footer_script require='livevalidation'}
+{footer_script require='jquery,livevalidation'}
 {if !$comment_add.IS_LOGGED}
 var author = new LiveValidation('author', {ldelim} onlyOnSubmit: true });
 author.add(Validate.Presence, {ldelim} failureMessage: "{'Please enter your username'|@translate}" });
@@ -14,7 +14,7 @@ email.add(Validate.Email, {ldelim} failureMessage: "{'mail address must be like 
 {/if}
 
 var website = new LiveValidation('website', {ldelim} onlyOnSubmit: true });
-website.add(Validate.Format, {ldelim} pattern: /^https?:\/\/(-\.)?([^\s\/?\.#-]+\.?)+(\/[^\s]*)?$/i,
+website.add(Validate.Format, {ldelim} pattern: /^https?:\/\/[^\s\/$.?#].[^\s]*$/i,
   failureMessage: "{'invalid website address'|@translate}"});
 
 var content = new LiveValidation('contentid', {ldelim} onlyOnSubmit: true });
@@ -27,6 +27,13 @@ jQuery("#expandForm").click(function() {ldelim}
     jQuery("#expandForm").slideUp();
     jQuery("#addComment").slideDown("slow");
   });
+});
+
+jQuery("#website").on('blur', function() {
+  var val = $(this).val();
+  if (val.substr(0, 4) != 'http') {
+    $(this).val('http://'+ val);
+  }
 });
 {/footer_script}
 
