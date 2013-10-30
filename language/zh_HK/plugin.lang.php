@@ -32,4 +32,7 @@ $lang['There are %d messages'] = '有%d條信息';
 $lang['Website'] = '網站';
 $lang['invalid website address'] = '無效的網站地址';
 $lang['not publicly visible'] = '未予公開';
+$lang['Guests (not registered) permissions :'] = '訪客（未註冊）的權限：';
+$lang['add comment'] = '新增評論';
+$lang['view comments'] = '檢視評論';
 ?>
