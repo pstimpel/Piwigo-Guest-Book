@@ -32,4 +32,7 @@ $lang['* : mandatory fields'] = '* : pakolliset kentät';
 $lang['%s says on %s :'] = '%s sanoi %s :';
 $lang['Please enter a message'] = 'Kirjoita viesti';
 $lang['Please enter your e-mail'] = 'Anna sähköpostiosoitteesi';
+$lang['Guests (not registered) permissions :'] = 'Vieraiden (rekisteröimättömät käyttäjät) käyttöoikeudet:';
+$lang['add comment'] = 'kommentoi';
+$lang['view comments'] = 'näytä kommentit';
 ?>
