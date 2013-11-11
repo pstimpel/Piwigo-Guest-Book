@@ -32,4 +32,7 @@ $lang['invalid website address'] = 'adreça de lloc web no vàlida';
 $lang['not publicly visible'] = 'no visible públicament';
 $lang['Please enter a message'] = 'Introduïu un missatge';
 $lang['Please enter your e-mail'] = 'Introduïu el vostre correu electrònic';
+$lang['Guests (not registered) permissions :'] = 'Permisos dels usuaris visitants (no registrats):';
+$lang['add comment'] = 'afegeix un comentari';
+$lang['view comments'] = 'visualitza comentaris';
 ?>
