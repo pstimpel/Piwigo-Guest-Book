@@ -73,6 +73,11 @@ SELECT COUNT(*) AS user_exists
   {
     $comm['email'] = $user['email'];
   }
+  else if ( empty($comm['email']) and $conf['comments_email_mandatory'] )
+  {
+    array_push($page['errors'], l10n('mail address must be like xxx@yyy.eee (example : jack@altern.org)'));
+    $comment_action='reject';
+  }
   else if ( !empty($comm['email']) and !email_check_format($comm['email']) )
   {
     array_push($page['errors'], l10n('mail address must be like xxx@yyy.eee (example : jack@altern.org)'));

@@ -7,7 +7,7 @@ var author = new LiveValidation('author', {ldelim} onlyOnSubmit: true });
 author.add(Validate.Presence, {ldelim} failureMessage: "{'Please enter your username'|@translate}" });
 {/if}
 
-{if $add_comment.EMAIL_MANDATORY and (!$add_comment.IS_LOGGED or empty($add_comment.EMAIL))}
+{if $comment_add.EMAIL_MANDATORY and (!$comment_add.IS_LOGGED or empty($comment_add.EMAIL))}
 var email = new LiveValidation('email', {ldelim} onlyOnSubmit: true });
 email.add(Validate.Presence, {ldelim} failureMessage: "{'Please enter your e-mail'|@translate}" });
 email.add(Validate.Email, {ldelim} failureMessage: "{'mail address must be like xxx@yyy.eee (example : jack@altern.org)'|@translate}" });
