@@ -32,4 +32,7 @@ $lang['invalid website address'] = 'Adresa site web invalida';
 $lang['not publicly visible'] = 'nevizibil publicului';
 $lang['Please enter a message'] = 'Vă rog să introduceţi un mesaj';
 $lang['Please enter your e-mail'] = 'Vă rog să introduceţi adresa de poştă electronică';
+$lang['Guests (not registered) permissions :'] = 'Permisiunile oaspeților (neînregistrați):';
+$lang['add comment'] = 'adaugă comentariu';
+$lang['view comments'] = 'vizualizează comentariile';
 ?>
