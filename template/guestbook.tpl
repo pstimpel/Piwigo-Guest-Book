@@ -92,6 +92,12 @@
           <textarea name="content" id="contentid" rows="7">{$comment_add.CONTENT}</textarea>
         </td>
       </tr>
+    {if isset($CRYPTO)}
+      {$CRYPTO.parsed_content}
+    {/if}
+    {if isset($EASYCAPTCHA)}
+      {$EASYCAPTCHA.parsed_content}
+    {/if}
       <tr>
         <td colspan="2">
           <input type="submit" value="{'Send'|translate}"> 
