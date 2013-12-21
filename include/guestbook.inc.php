@@ -3,7 +3,7 @@ if (!defined('GUESTBOOK_PATH')) die('Hacking attempt!');
 
 global $user;
 
-include(GUESTBOOK_PATH . '/include/functions.inc.php');
+include(GUESTBOOK_PATH . 'include/functions.inc.php');
 
 $url_self = empty($page['start']) ? GUESTBOOK_URL : add_url_params(GUESTBOOK_URL, array('start' => $page['start']));
 
@@ -105,13 +105,13 @@ if (isset($_GET['action']))
 // +-----------------------------------------------------------------------+
 // |                                add comment                            |
 // +-----------------------------------------------------------------------+
-if ( isset( $_POST['content'] ) && (!is_a_guest() || $conf['guestbook']['guest_can_add']))
+if (isset($_POST['content']) && (!is_a_guest() || $conf['guestbook']['guest_can_add']))
 {
   $comm = array(
-    'author' => trim( @$_POST['author'] ),
-    'email' => trim( @$_POST['email'] ),
-    'content' => trim( $_POST['content'] ),
-    'website' => trim( $_POST['website'] ),
+    'author' => trim(@$_POST['author']),
+    'email' => trim(@$_POST['email']),
+    'content' => trim($_POST['content']),
+    'website' => trim($_POST['website']),
     'rate' => @$_POST['score'],
    );
 
@@ -122,21 +122,22 @@ if ( isset( $_POST['content'] ) && (!is_a_guest() || $conf['guestbook']['guest_c
   switch ($comment_action)
   {
     case 'moderate':
-      array_push($page['infos'], l10n('An administrator must authorize your comment before it is visible.') );
+      $page['infos'][] = l10n('An administrator must authorize your comment before it is visible.');
     case 'validate':
-      array_push($page['infos'], l10n('Your comment has been registered'));
+      $page['infos'][] = l10n('Your comment has been registered');
       break;
     case 'reject':
       set_status_header(403);
-      array_push($page['errors'], l10n('Your comment has NOT been registered because it did not pass the validation rules') );
+      $template->assign('GB_OPEN', true);
+      $page['errors'][] = l10n('Your comment has NOT been registered because it did not pass the validation rules');
       break;
     default:
       trigger_error('Invalid comment action '.$comment_action, E_USER_WARNING);
   }
 
   // allow plugins to notify what's going on
-  trigger_action( 'user_comment_insertion',
-      array_merge($comm, array('action'=>$comment_action) )
+  trigger_action('user_comment_insertion',
+      array_merge($comm, array('action'=>$comment_action))
     );
 }
 
@@ -144,13 +145,13 @@ if ( isset( $_POST['content'] ) && (!is_a_guest() || $conf['guestbook']['guest_c
 // |                                display comments                       |
 // +-----------------------------------------------------------------------+
 $where_clauses = array('1=1');
-if ( !is_admin() )
+if (!is_admin())
 {
-  array_push($where_clauses, 'validated = \'true\'');
+  $where_clauses[] = 'validated = \'true\'';
 }
 if (isset($_GET['comment_id']))
 {
-  array_push($where_clauses, 'com.id = '.pwg_db_real_escape_string($_GET['comment_id']));
+  $where_clauses[] = 'com.id = '.pwg_db_real_escape_string($_GET['comment_id']);
 }
 
 // number of comments for this picture
@@ -160,7 +161,7 @@ SELECT
   FROM '.GUESTBOOK_TABLE.' as com
   WHERE '.implode(' AND ', $where_clauses).'
 ;';
-$row = pwg_db_fetch_assoc( pwg_query( $query ) );
+$row = pwg_db_fetch_assoc(pwg_query($query));
 
 // navigation bar creation
 $page['start'] = 0;
@@ -177,12 +178,10 @@ $navigation_bar = create_navigation_bar(
   false
   );
 
-$template->assign(
-  array(
-    'COMMENT_COUNT' => $row['nb_comments'],
-    'navbar' => $navigation_bar,
-    )
-  );
+$template->assign(array(
+  'COMMENT_COUNT' => $row['nb_comments'],
+  'navbar' => $navigation_bar,
+  ));
   
 if ($row['nb_comments'] > 0)
 {
@@ -222,13 +221,12 @@ SELECT
       $author = stripslashes($row['username']);
     }
 
-    $tpl_comment =
-      array(
-        'ID' => $row['id'],
-        'AUTHOR' => trigger_event('render_comment_author', $author),
-        'DATE' => format_date($row['date'], true),
-        'CONTENT' => trigger_event('render_comment_content',$row['content']),
-        'WEBSITE' => $row['website'],
+    $tpl_comment = array(
+      'ID' => $row['id'],
+      'AUTHOR' => trigger_event('render_comment_author', $author),
+      'DATE' => format_date($row['date'], true),
+      'CONTENT' => trigger_event('render_comment_content', $row['content']),
+      'WEBSITE' => $row['website'],
       );
       
     if ($conf['guestbook']['activate_rating'])
@@ -275,13 +273,13 @@ SELECT
       if ($row['validated'] != 'true')
       {
         $tpl_comment['U_VALIDATE'] = add_url_params(
-                $url_self,
-                array(
-                  'action' => 'validate_comment',
-                  'comment_to_validate' => $row['id'],
-                  'pwg_token' => get_pwg_token(),
-                  )
-                );
+          $url_self,
+          array(
+            'action' => 'validate_comment',
+            'comment_to_validate' => $row['id'],
+            'pwg_token' => get_pwg_token(),
+            )
+          );
       }
     }
     $template->append('comments', $tpl_comment);
@@ -315,20 +313,23 @@ if ($show_add_comment_form)
   }
 
   $template->assign('comment_add',
-      array(
-        'F_ACTION' => $url_self,
-        'KEY' => get_ephemeral_key(3),
-        'CONTENT' => $content,
-        'IS_LOGGED' => is_classic_user(),
-        'AUTHOR' => $author,
-        'WEBSITE' => $website,
-        'EMAIL' => $email,
-        'ACTIVATE_RATING' => $conf['guestbook']['activate_rating'],
-        'EMAIL_MANDATORY' => $conf['comments_email_mandatory'],
-      ));
+    array(
+      'F_ACTION' => $url_self,
+      'KEY' => get_ephemeral_key(3),
+      'CONTENT' => $content,
+      'IS_LOGGED' => is_classic_user(),
+      'AUTHOR' => $author,
+      'WEBSITE' => $website,
+      'EMAIL' => $email,
+      'ACTIVATE_RATING' => $conf['guestbook']['activate_rating'],
+      'EMAIL_MANDATORY' => $conf['comments_email_mandatory'],
+    ));
 }
 
-$template->assign('ABS_GUESTBOOK_PATH', realpath(GUESTBOOK_PATH) . '/');
-$template->assign('GUESTBOOK_PATH', GUESTBOOK_PATH);
+$template->assign(array(
+  'GUESTBOOK_PATH' => GUESTBOOK_PATH,
+  'ABS_GUESTBOOK_PATH' => realpath(GUESTBOOK_PATH) . '/',
+  ));
 
-$template->set_filename('index', realpath(GUESTBOOK_PATH . 'template/guestbook.tpl'));
+$template->set_filename('guestbook', realpath(GUESTBOOK_PATH . 'template/guestbook.tpl'));
+$template->assign_var_from_handle('CONTENT', 'guestbook');

@@ -1,5 +1,5 @@
 <?php
-if (!defined('GUESTBOOK_PATH')) die('Hacking attempt!');
+defined('GUESTBOOK_PATH') or die('Hacking attempt!');
 
 if (isset($_POST['submit']))
 {
@@ -14,7 +14,7 @@ if (isset($_POST['submit']))
     );
     
   conf_update_param('guestbook', serialize($conf['guestbook']));
-  array_push($page['infos'], l10n('Information data registered in database'));
+  $page['infos'][] = l10n('Information data registered in database');
 }
 
 $template->assign($conf['guestbook']);

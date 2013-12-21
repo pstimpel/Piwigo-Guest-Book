@@ -11,26 +11,20 @@ if (!empty($_POST))
 {
   if (empty($_POST['comments']))
   {
-    array_push(
-      $page['errors'],
-      l10n('Select at least one comment')
-      );
+    $page['errors'][] =l10n('Select at least one comment');
   }
   else
   {
-    include_once( GUESTBOOK_PATH .'include/functions_comment.inc.php' );
+    include_once(GUESTBOOK_PATH .'include/functions_comment.inc.php');
     check_input_parameter('comments', $_POST, true, PATTERN_ID);
     
     if (isset($_POST['validate']))
     {
       validate_user_comment_guestbook($_POST['comments']);
 
-      array_push(
-        $page['infos'],
-        l10n_dec(
-          '%d user comment validated', '%d user comments validated',
-          count($_POST['comments'])
-          )
+      $page['infos'][] = l10n_dec(
+        '%d user comment validated', '%d user comments validated',
+        count($_POST['comments'])
         );
     }
 
@@ -38,12 +32,9 @@ if (!empty($_POST))
     {
       delete_user_comment_guestbook($_POST['comments']);
 
-      array_push(
-        $page['infos'],
-        l10n_dec(
-          '%d user comment rejected', '%d user comments rejected',
-          count($_POST['comments'])
-          )
+      $page['infos'][] =l10n_dec(
+        '%d user comment rejected', '%d user comments rejected',
+        count($_POST['comments'])
         );
     }
   }
@@ -74,6 +65,7 @@ SELECT
   ORDER BY c.date DESC
 ;';
 $result = pwg_query($query);
+
 while ($row = pwg_db_fetch_assoc($result))
 {
   if (empty($row['author_id'])) 
@@ -100,14 +92,13 @@ while ($row = pwg_db_fetch_assoc($result))
       )
     );
 
-  array_push($list, $row['id']);
+  $list[] = $row['id'];
 }
 
-$template->assign('LIST', implode(',', $list) );
 
-$template->assign('F_ACTION', GUESTBOOK_ADMIN . '-pending');
-
+$template->assign(array(
+  'LIST' => implode(',', $list),
+  'F_ACTION' => GUESTBOOK_ADMIN . '-pending',
+  ));
 
 $template->set_filename('guestbook', realpath(GUESTBOOK_PATH . 'admin/template/pending.tpl'));
-
-?>

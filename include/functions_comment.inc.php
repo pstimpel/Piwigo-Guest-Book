@@ -1,15 +1,14 @@
 <?php
-if (!defined('GUESTBOOK_PATH')) die('Hacking attempt!');
+defined('GUESTBOOK_PATH') or die('Hacking attempt!');
 
 include_once(PHPWG_ROOT_PATH.'include/functions_comment.inc.php');
-add_event_handler('user_comment_check_guestbook', 'user_comment_check',
-  EVENT_HANDLER_PRIORITY_NEUTRAL, 2);
+
 
 function insert_user_comment_guestbook( &$comm, $key )
 {
   global $conf, $user, $page;
 
-  $comm = array_merge( $comm,
+  $comm = array_merge($comm,
     array(
       'ip' => $_SERVER['REMOTE_ADDR'],
       'agent' => $_SERVER['HTTP_USER_AGENT']
@@ -18,35 +17,36 @@ function insert_user_comment_guestbook( &$comm, $key )
   
   if (!$conf['guestbook']['comments_validation'] or is_admin())
   {
-    $comment_action='validate'; //one of validate, moderate, reject
+    $comment_action='validate';
   }
   else
   {
-    $comment_action='moderate'; //one of validate, moderate, reject
+    $comment_action='moderate';
   }
 
-  // display author field if the user status is guest or generic
+  // author
   if (!is_classic_user())
   {
-    if ( empty($comm['author']) )
+    if (empty($comm['author']))
     {
-      array_push($page['errors'], l10n('Please enter your username'));
+      $page['errors'][] = l10n('Please enter your username');
       $comment_action='reject';
     }
     else
     {
       $comm['author_id'] = $conf['guest_id'];
-      // if a guest try to use the name of an already existing user, he must be
-      // rejected
+      // if a guest try to use the name of an already existing user,
+      // he must be rejected
       $query = '
 SELECT COUNT(*) AS user_exists
   FROM '.USERS_TABLE.'
-  WHERE '.$conf['user_fields']['username']." = '".addslashes($comm['author'])."'";
-      $row = pwg_db_fetch_assoc( pwg_query( $query ) );
+  WHERE '.$conf['user_fields']['username']." = '".addslashes($comm['author'])."'
+;";
+      $row = pwg_db_fetch_assoc(pwg_query($query));
       
-      if ( $row['user_exists'] == 1 )
+      if ($row['user_exists'] == 1)
       {
-        array_push($page['errors'], l10n('This login is already used by another user') );
+        $page['errors'][] = l10n('This login is already used by another user');
         $comment_action='reject';
       }
     }
@@ -57,41 +57,43 @@ SELECT COUNT(*) AS user_exists
     $comm['author_id'] = $user['id'];
   }
 
-  if ( empty($comm['content']) )
-  { // empty comment content
+  // content
+  if (empty($comm['content']))
+  {
     $comment_action='reject';
   }
 
-  if ( !verify_ephemeral_key(@$key) )
+  // key
+  if (!verify_ephemeral_key(@$key))
   {
     $comment_action='reject';
     $_POST['cr'][] = 'key';
   }
   
   // email
-  if ( empty($comm['email']) and is_classic_user() and !empty($user['email']) )
+  if (empty($comm['email']) and is_classic_user() and !empty($user['email']))
   {
     $comm['email'] = $user['email'];
   }
-  else if ( empty($comm['email']) and $conf['comments_email_mandatory'] )
+  else if (empty($comm['email']) and $conf['comments_email_mandatory'])
   {
-    array_push($page['errors'], l10n('mail address must be like xxx@yyy.eee (example : jack@altern.org)'));
+    $page['errors'][] = l10n('mail address must be like xxx@yyy.eee (example : jack@altern.org)');
     $comment_action='reject';
   }
-  else if ( !empty($comm['email']) and !email_check_format($comm['email']) )
+  else if (!empty($comm['email']) and !email_check_format($comm['email']))
   {
-    array_push($page['errors'], l10n('mail address must be like xxx@yyy.eee (example : jack@altern.org)'));
+    $page['errors'][] = l10n('mail address must be like xxx@yyy.eee (example : jack@altern.org)');
     $comment_action='reject';
   }
   
   // website
-  if ( !empty($comm['website']) and !preg_match('/^(https?:\/\/)/i', $comm['website']) )
+  if (!empty($comm['website']) and !preg_match('/^(https?:\/\/)/i', $comm['website']))
   {
     $comm['website'] = 'http://'.$comm['website'];
   }
-  if ( !empty($comm['website']) and !url_check_format($comm['website']) )
+  if (!empty($comm['website']) and !url_check_format($comm['website']))
   {
-    array_push($page['errors'], l10n('invalid website address'));
+    $page['errors'][] = l10n('invalid website address');
     $comment_action='reject';
   }
   
@@ -124,17 +126,15 @@ SELECT COUNT(1) FROM '.GUESTBOOK_TABLE.'
     list($counter) = pwg_db_fetch_row(pwg_query($query));
     if ($counter > 0)
     {
-      array_push($page['errors'], l10n('Anti-flood system : please wait for a moment before trying to post another comment') );
+      $page['errors'][] = l10n('Anti-flood system : please wait for a moment before trying to post another comment');
       $comment_action='reject';
     }
   }
   
   // perform more spam check
-  $comment_action = trigger_event('user_comment_check_guestbook',
-      $comment_action, $comm
-    );
+  $comment_action = trigger_event('user_comment_check', $comment_action, $comm);
 
-  if ( $comment_action!='reject' )
+  if ($comment_action!='reject')
   {
     $query = '
 INSERT INTO '.GUESTBOOK_TABLE.'(
@@ -174,8 +174,7 @@ INSERT INTO '.GUESTBOOK_TABLE.'(
 
       $comment_url = add_url_params(GUESTBOOK_URL, array('comment_id'=>$comm['id']));
 
-      $keyargs_content = array
-      (
+      $keyargs_content = array(
         get_l10n_args('Author: %s', stripslashes($comm['author']) ),
         get_l10n_args('Comment: %s', stripslashes($comm['content']) ),
         get_l10n_args('', ''),
@@ -188,13 +187,13 @@ INSERT INTO '.GUESTBOOK_TABLE.'(
         $keyargs_content[] = get_l10n_args('(!) This comment requires validation', '');
       }
 
-      pwg_mail_notification_admins
-      (
+      pwg_mail_notification_admins(
         get_l10n_args('Comment by %s', stripslashes($comm['author']) ),
         $keyargs_content
       );
     }
   }
+  
   return $comment_action;
 }
 
@@ -204,20 +203,20 @@ function update_user_comment_guestbook($comment, $post_key)
 
   $comment_action = 'validate';
 
-  if ( !verify_ephemeral_key($post_key) )
+  if (!verify_ephemeral_key($post_key))
   {
     $comment_action='reject';
   }
-  elseif (!$conf['guestbook']['comments_validation'] or is_admin()) // should the updated comment must be validated
+  else if (!$conf['guestbook']['comments_validation'] or is_admin()) // should the updated comment must be validated
   {
-    $comment_action='validate'; //one of validate, moderate, reject
+    $comment_action='validate';
   }
   else
   {
-    $comment_action='moderate'; //one of validate, moderate, reject
+    $comment_action='moderate';
   }
 
-  if ( $comment_action!='reject' )
+  if ($comment_action!='reject')
   {
     $user_where_clause = '';
     if (!is_admin())
@@ -243,8 +242,7 @@ $user_where_clause.'
       
       $comment_url = add_url_params(GUESTBOOK_URL, array('comment_id'=>$comm['id']));
 
-      $keyargs_content = array
-      (
+      $keyargs_content = array(
         get_l10n_args('Author: %s', stripslashes($GLOBALS['user']['username']) ),
         get_l10n_args('Comment: %s', stripslashes($comment['content']) ),
         get_l10n_args('', ''),
@@ -253,8 +251,7 @@ $user_where_clause.'
         get_l10n_args('(!) This comment requires validation', ''),
       );
 
-      pwg_mail_notification_admins
-      (
+      pwg_mail_notification_admins(
         get_l10n_args('Comment by %s', stripslashes($GLOBALS['user']['username']) ),
         $keyargs_content
       );
@@ -273,6 +270,7 @@ SELECT
   WHERE id = '.$comment_id.'
 ;';
   $result = pwg_query($query);
+
   if (pwg_db_num_rows($result) == 0)
   {
     if ($die_on_error)
@@ -295,13 +293,17 @@ function delete_user_comment_guestbook($comment_id)
   $user_where_clause = '';
   if (!is_admin())
   {
-    $user_where_clause = '   AND author_id = \''.$GLOBALS['user']['id'].'\'';
+    $user_where_clause = ' AND author_id = \''.$GLOBALS['user']['id'].'\'';
   }
   
   if (is_array($comment_id))
+  {
     $where_clause = 'id IN('.implode(',', $comment_id).')';
+  }
   else
+  {
     $where_clause = 'id = '.$comment_id;
+  }
     
   $query = '
 DELETE FROM '.GUESTBOOK_TABLE.'
@@ -314,9 +316,13 @@ $user_where_clause.'
 function validate_user_comment_guestbook($comment_id)
 {
   if (is_array($comment_id))
+  {
     $where_clause = 'id IN('.implode(',', $comment_id).')';
+  }
   else
+  {
     $where_clause = 'id = '.$comment_id;
+  }
     
   $query = '
 UPDATE '.GUESTBOOK_TABLE.'

@@ -1,5 +1,5 @@
 <?php
-if(!defined('GUESTBOOK_PATH')) die('Hacking attempt!');
+defined('GUESTBOOK_PATH') or die('Hacking attempt!');
 
 global $template, $page;
 

@@ -1,15 +1,15 @@
 <?php
-if (!defined('GUESTBOOK_PATH')) die('Hacking attempt!');
+defined('GUESTBOOK_PATH') or die('Hacking attempt!');
 
 function get_stars($score, $path)
 {
-  if ($score === null) return null;
+  if (!isset($score)) return null;
   
   $max = 5;
   $score = min(max($score, 0), $max);
   $floor = floor($score);
   
-  $html = null;
+  $html = '';
   for ($i=1; $i<=$floor; $i++)
   {
     $html.= '<img alt="'.$i.'" src="'.$path.'star-on.png">';
