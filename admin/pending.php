@@ -81,9 +81,9 @@ while ($row = pwg_db_fetch_assoc($result))
     'comments',
     array(
       'ID' => $row['id'],
-      'AUTHOR' => trigger_event('render_comment_author', $author_name),
+      'AUTHOR' => trigger_change('render_comment_author', $author_name),
       'DATE' => format_date($row['date'], true),
-      'CONTENT' => trigger_event('render_comment_content',$row['content']),
+      'CONTENT' => trigger_change('render_comment_content', $row['content'], 'guestbook'),
       'EMAIL' => $row['email'],
       'WEBSITE' => $row['website'],
       'WEBSITE_NAME' => preg_replace('#^(https?:\/\/)#i', null, $row['website']),

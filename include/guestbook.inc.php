@@ -134,11 +134,6 @@ if (isset($_POST['content']) && (!is_a_guest() || $conf['guestbook']['guest_can_
     default:
       trigger_error('Invalid comment action '.$comment_action, E_USER_WARNING);
   }
-
-  // allow plugins to notify what's going on
-  trigger_action('user_comment_insertion',
-      array_merge($comm, array('action'=>$comment_action))
-    );
 }
 
 // +-----------------------------------------------------------------------+
@@ -223,9 +218,9 @@ SELECT
 
     $tpl_comment = array(
       'ID' => $row['id'],
-      'AUTHOR' => trigger_event('render_comment_author', $author),
+      'AUTHOR' => trigger_change('render_comment_author', $author),
       'DATE' => format_date($row['date'], true),
-      'CONTENT' => trigger_event('render_comment_content', $row['content']),
+      'CONTENT' => trigger_change('render_comment_content', $row['content'], 'guestbook'),
       'WEBSITE' => $row['website'],
       );
       

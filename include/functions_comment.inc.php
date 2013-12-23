@@ -132,7 +132,7 @@ SELECT COUNT(1) FROM '.GUESTBOOK_TABLE.'
   }
   
   // perform more spam check
-  $comment_action = trigger_event('user_comment_check', $comment_action, $comm);
+  $comment_action = trigger_change('user_comment_check', $comment_action, $comm, 'guestbook');
 
   if ($comment_action!='reject')
   {
