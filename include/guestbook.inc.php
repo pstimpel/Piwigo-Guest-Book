@@ -218,9 +218,9 @@ SELECT
 
     $tpl_comment = array(
       'ID' => $row['id'],
-      'AUTHOR' => trigger_change('render_comment_author', $author),
+      'AUTHOR' => trigger_event('render_comment_author', $author),
       'DATE' => format_date($row['date'], true),
-      'CONTENT' => trigger_change('render_comment_content', $row['content'], 'guestbook'),
+      'CONTENT' => trigger_event('render_comment_content', $row['content'], 'guestbook'),
       'WEBSITE' => $row['website'],
       );
       
