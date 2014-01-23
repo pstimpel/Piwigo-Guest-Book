@@ -87,14 +87,18 @@ SELECT COUNT(*) AS user_exists
   }
   
   // website
-  if (!empty($comm['website']) and !preg_match('/^(https?:\/\/)/i', $comm['website']))
+  if (!empty($comm['website']))
   {
-    $comm['website'] = 'http://'.$comm['website'];
-  }
-  if (!empty($comm['website']) and !url_check_format($comm['website']))
-  {
-    $page['errors'][] = l10n('invalid website address');
-    $comment_action='reject';
+    $comm['website'] = strip_tags($comm['website']);
+    if (!preg_match('/^(https?:\/\/)/i', $comm['website']))
+    {
+      $comm['website'] = 'http://'.$comm['website'];
+    }
+    if (!url_check_format($comm['website']))
+    {
+      $page['errors'][] = l10n('invalid website address');
+      $comment_action='reject';
+    }
   }
   
   // anonymous id = ip address
