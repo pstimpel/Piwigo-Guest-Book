@@ -21,15 +21,23 @@
   var content = new LiveValidation('contentid', {ldelim} onlyOnSubmit: true });
   content.add(Validate.Presence, {ldelim} failureMessage: "{'Please enter a message'|translate}" });
   
+  {if $themeconf.mobile}
+  var width = $(document).width()-30;
+  {else}
+  var width = jQuery('#guestbookAdd').parent().width();
+  {/if}
+  
   {if !isset($GB_OPEN)}
   jQuery('#addComment').hide();
   jQuery('#guestbookAdd').css('width', '180px');
   jQuery('#expandForm').click(function() {ldelim}
-    jQuery('#guestbookAdd').animate({ldelim}'width': '550px'}, function() {ldelim}
+    jQuery('#guestbookAdd').animate({ 'width': Math.min(width, 580) }, function() {ldelim}
       jQuery('#expandForm').slideUp();
       jQuery('#addComment').slideDown('slow');
     });
   });
+  {else}
+  jQuery('#guestbookAdd').css({ 'width': Math.min(width, 580) });
   {/if}
 
   jQuery('#website').on('blur', function() {ldelim}
@@ -56,55 +64,49 @@
 <div id="guestbookAdd">
   <h4 id="expandForm">{'Sign the guestbook'|translate}</h4>
   <form method="post" action="{$comment_add.F_ACTION}" id="addComment" class="contact">
-    <table>
-    {if not $comment_add.IS_LOGGED or empty($comment_add.EMAIL)}
-      <tr>
-        <td>
-          <label for="author">{'Author'|translate}* :</label>
-        {if $comment_add.IS_LOGGED}
-          {$comment_add.AUTHOR}
-          <input type="hidden" name="author" value="{$comment_add.AUTHOR}">
-        {else}
-          <input type="text" name="author" id="author" value="{$comment_add.AUTHOR}">
-        {/if}
-        </td>
-        <td>
-          <label for="email">{'Email address'|translate}{if $comment_add.EMAIL_MANDATORY}*{/if} ({'not publicly visible'|translate}) :</label>
-          <input type="text" name="email" id="email" value="{$comment_add.EMAIL}">
-        </td>
-      </tr>
+  
+  {if not $comment_add.IS_LOGGED or empty($comment_add.EMAIL)}
+    <div class="col-50">
+      <label for="author">{'Author'|translate}* :</label>
+    {if $comment_add.IS_LOGGED}
+      {$comment_add.AUTHOR}
+      <input type="hidden" name="author" value="{$comment_add.AUTHOR}">
+    {else}
+      <input type="text" name="author" id="author" value="{$comment_add.AUTHOR}">
     {/if}
-      <tr>
-      {if $comment_add.ACTIVATE_RATING}
-        <td>
-          <label>{'Rate'|translate} :</label>
-          <span id="comment_rate"></span>
-        </td>
-      {/if}
-        <td>
-          <label for="website">{'Website'|translate} :</label>
-          <input type="text" name="website" id="website" value="{$comment_add.WEBSITE}">
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <label for="contentid">{'Comment'|translate}* :</label>
-          <textarea name="content" id="contentid" rows="7">{$comment_add.CONTENT}</textarea>
-        </td>
-      </tr>
+    </div>
+    <div class="col-50">
+      <label for="email">{'Email address'|translate}{if $comment_add.EMAIL_MANDATORY}*{/if} ({'not publicly visible'|translate}) :</label>
+      <input type="text" name="email" id="email" value="{$comment_add.EMAIL}">
+    </div>
+  {/if}
+  {if $comment_add.ACTIVATE_RATING}
+    <div class="col-50">
+      <label>{'Rate'|translate} :</label>
+      <span id="comment_rate"></span>
+    </div>
+  {/if}
+    <div class="col-50">
+      <label for="website">{'Website'|translate} :</label>
+      <input type="text" name="website" id="website" value="{$comment_add.WEBSITE}">
+    </div>
+    
+    <div class="col-100">
+      <label for="contentid">{'Comment'|translate}* :</label>
+      <textarea name="content" id="contentid" rows="7">{$comment_add.CONTENT}</textarea>
+    </div>
+    
     {if isset($CRYPTO)}
       {$CRYPTO.parsed_content}
     {/if}
     {if isset($EASYCAPTCHA)}
       {$EASYCAPTCHA.parsed_content}
     {/if}
-      <tr>
-        <td colspan="2">
-          <input type="submit" value="{'Send'|translate}"> 
-          {'* : mandatory fields'|translate}
-        </td>
-      </tr>
-    </table>
+    
+    <div class="col-100">
+      <input type="submit" value="{'Send'|translate}"> 
+      {'* : mandatory fields'|translate}
+    </div>
     
     <input type="hidden" name="key" value="{$comment_add.KEY}">
   </form>
