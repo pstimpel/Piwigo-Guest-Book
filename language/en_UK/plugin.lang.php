@@ -15,5 +15,7 @@ $lang['%s says on %s :'] = '%s says on %s:';
 $lang['Guests (not registered) permissions :'] = 'Guests (not registered) permissions:';
 $lang['view comments'] = 'view comments';
 $lang['add comment'] = 'add comment';
+$lang['Send'] = 'Send';
+$lang['Rate'] = 'Rate';
 
 ?>
