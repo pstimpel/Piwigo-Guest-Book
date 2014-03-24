@@ -35,4 +35,5 @@ $lang['Please enter your e-mail'] = 'Introduïu el vostre correu electrònic';
 $lang['Guests (not registered) permissions :'] = 'Permisos dels usuaris visitants (no registrats):';
 $lang['add comment'] = 'afegeix un comentari';
 $lang['view comments'] = 'visualitza comentaris';
-?>
+$lang['Rate'] = 'Valora';
+$lang['Send'] = 'Envia';
