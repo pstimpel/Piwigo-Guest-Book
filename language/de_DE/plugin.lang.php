@@ -35,4 +35,5 @@ $lang['Please enter your e-mail'] = 'E-Mail Adresse bitte angeben';
 $lang['Guests (not registered) permissions :'] = 'Gästeberechtigungen (Nicht registriert):';
 $lang['add comment'] = 'Kommentar hinzufügen';
 $lang['view comments'] = 'Kommentare anzeigen';
-?>
+$lang['Rate'] = 'Rate';
+$lang['Send'] = 'Senden';
