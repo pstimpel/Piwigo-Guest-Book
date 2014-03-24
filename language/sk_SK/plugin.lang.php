@@ -35,4 +35,5 @@ $lang['Please enter a message'] = 'Vložte prosím správu';
 $lang['Guests (not registered) permissions :'] = 'Prístup hostí (neregistrovaných)';
 $lang['view comments'] = 'zobraziť komentáre';
 $lang['add comment'] = 'pridať komentár';
-?>
+$lang['Send'] = 'Poslať';
+$lang['Rate'] = 'Hodnotenie';
