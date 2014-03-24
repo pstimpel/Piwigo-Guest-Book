@@ -21,12 +21,12 @@
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
 $lang['%s says on %s :'] = '%s در %s می‌گوید:';
-$lang['* : mandatory fields'] = '* : فیلد الزامی';
-$lang['Activate rating'] = 'فعال کردن امتیازدهی';
-$lang['Please enter your username'] = 'نام کاربری خود را وارد کنید';
+$lang['* : mandatory fields'] = '*: فیلد الزامی';
+$lang['Activate rating'] = 'فعال کردنِ امتیازدهی';
+$lang['Please enter your username'] = 'نام کاربری خود را بنویسید';
 $lang['There are %d messages'] = '%d پیام موجود است';
 $lang['Website'] = 'وبسایت';
-$lang['invalid website address'] = 'آدرس وبسایت درست نمی‌باشد';
+$lang['invalid website address'] = 'آدرس وبسایت درست نیست';
 $lang['not publicly visible'] = 'بطور همگانی نمایان نباشد';
 $lang['GuestBook'] = 'دفتر ثبت مهمان';
 $lang['Sign the guestbook'] = 'دفتر ثبت مهمان را امضا کنید';
@@ -35,4 +35,5 @@ $lang['Please enter a message'] = 'یک پیام بنویسید';
 $lang['Guests (not registered) permissions :'] = 'دسترسی‌های مهمان‌ها (کاربرانِ عضو نشده):';
 $lang['add comment'] = 'افزودن دیدگاه';
 $lang['view comments'] = 'دیدن دیدگاه‌ها';
-?>
+$lang['Rate'] = 'رتبه';
+$lang['Send'] = 'فرستادن';
