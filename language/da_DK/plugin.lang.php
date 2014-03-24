@@ -35,4 +35,5 @@ $lang['Please enter a message'] = 'Skriv en besked';
 $lang['Guests (not registered) permissions :'] = 'Rettigheder for gæster (ikke-registrerede):';
 $lang['add comment'] = 'tilføj kommentar';
 $lang['view comments'] = 'vis kommentarer';
-?>
+$lang['Rate'] = 'Bedøm';
+$lang['Send'] = 'Send';
