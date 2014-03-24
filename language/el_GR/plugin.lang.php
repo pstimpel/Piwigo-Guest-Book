@@ -35,4 +35,5 @@ $lang['Please enter a message'] = 'Παρακαλώ εισάγετε ένα μή
 $lang['view comments'] = 'εμφάνιση σχολίων';
 $lang['add comment'] = 'πρόσθεσε ένα σχόλιο';
 $lang['Guests (not registered) permissions :'] = 'Δικαιώματα Επισκεπτών (Μη Εγγεγραμμένοι)';
-?>
+$lang['Send'] = 'Αποστολή';
+$lang['Rate'] = 'Βαθμολόγιση';
