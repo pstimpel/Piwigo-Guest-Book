@@ -35,4 +35,5 @@ $lang['not publicly visible'] = 'Ej publikt synlig';
 $lang['Guests (not registered) permissions :'] = 'Gästrättigheter (gäst = oregistrerad):';
 $lang['add comment'] = 'kommentera';
 $lang['view comments'] = 'visa kommentarer';
-?>
+$lang['Rate'] = 'Betyg';
+$lang['Send'] = 'Skicka';
