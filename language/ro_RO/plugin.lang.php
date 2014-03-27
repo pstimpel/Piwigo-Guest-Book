@@ -20,19 +20,20 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['%s says on %s :'] = '%s a zis in %s :';
-$lang['* : mandatory fields'] = '* : campuri obligatorii';
-$lang['Activate rating'] = 'Activeaza evaluarea';
-$lang['GuestBook'] = 'Carte de oaspeti';
-$lang['Please enter your username'] = 'Introduceti numele de utilizator';
-$lang['Sign the guestbook'] = 'Semneaza cartea de oaspeti';
+$lang['%s says on %s :'] = '%s a zis în %s :';
+$lang['* : mandatory fields'] = '* : cîmpuri obligatorii';
+$lang['Activate rating'] = 'Activează evaluarea';
+$lang['GuestBook'] = 'Carte de oaspeți';
+$lang['Please enter your username'] = 'Introduceți numele de utilizator';
+$lang['Sign the guestbook'] = 'Semnează cartea de oaspeți';
 $lang['There are %d messages'] = 'Acolo sunt %d mesaje';
 $lang['Website'] = 'Site web';
-$lang['invalid website address'] = 'Adresa site web invalida';
+$lang['invalid website address'] = 'Adresa site web invalidă';
 $lang['not publicly visible'] = 'nevizibil publicului';
 $lang['Please enter a message'] = 'Vă rog să introduceţi un mesaj';
 $lang['Please enter your e-mail'] = 'Vă rog să introduceţi adresa de poştă electronică';
 $lang['Guests (not registered) permissions :'] = 'Permisiunile oaspeților (neînregistrați):';
 $lang['add comment'] = 'adaugă comentariu';
 $lang['view comments'] = 'vizualizează comentariile';
-?>
+$lang['Rate'] = 'Evaluează';
+$lang['Send'] = 'Trimite';
