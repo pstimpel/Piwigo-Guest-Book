@@ -35,4 +35,5 @@ $lang['not publicly visible'] = 'ne publike videbla';
 $lang['Guests (not registered) permissions :'] = 'Permesiloj de gastoj (neregistritaj):';
 $lang['add comment'] = 'aldoni komenton';
 $lang['view comments'] = 'vidi komentojn';
-?>
+$lang['Rate'] = 'Takso';
+$lang['Send'] = 'Sendi';
