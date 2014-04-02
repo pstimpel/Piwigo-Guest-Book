@@ -33,6 +33,7 @@ $lang['There are %d messages'] = 'Yra žinučių: %d';
 $lang['Website'] = 'Puslapis';
 $lang['add comment'] = 'pridėti komentarą';
 $lang['invalid website address'] = 'neteisingas puslapio adresas';
-$lang['not publicly visible'] = 'viešai nematomas';
+$lang['not publicly visible'] = 'viešai nerodomas';
 $lang['view comments'] = 'skaityti komentarus';
-?>
+$lang['Rate'] = 'Įvertinti';
+$lang['Send'] = 'Siųsti';
