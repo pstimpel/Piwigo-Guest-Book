@@ -35,4 +35,5 @@ $lang['not publicly visible'] = 'ni javno vidno';
 $lang['Guests (not registered) permissions :'] = 'Obiskovalec (neregistriran)- dovoljenja:';
 $lang['add comment'] = 'dodaj komentar';
 $lang['view comments'] = 'ogled komentarjev';
-?>
+$lang['Rate'] = 'Oceni';
+$lang['Send'] = 'Pošlji';
