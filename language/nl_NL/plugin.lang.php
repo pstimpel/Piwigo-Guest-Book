@@ -35,4 +35,5 @@ $lang['Please enter your e-mail'] = 'Geef aub uw email-adres in';
 $lang['Guests (not registered) permissions :'] = 'Rechten van gasten (niet geregistreerd)';
 $lang['add comment'] = 'geef commentaar';
 $lang['view comments'] = 'bekijk commentaar';
-?>
+$lang['Rate'] = 'Waarderen';
+$lang['Send'] = 'Verstuur';
