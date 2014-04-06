@@ -35,4 +35,5 @@ $lang['Please enter your e-mail'] = '请输入你的电子邮件';
 $lang['Guests (not registered) permissions :'] = '游客(未注册)权限';
 $lang['add comment'] = '添加评论';
 $lang['view comments'] = '查看评论';
-?>
+$lang['Rate'] = '评分';
+$lang['Send'] = '发送';
