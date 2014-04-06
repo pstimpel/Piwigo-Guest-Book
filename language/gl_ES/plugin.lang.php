@@ -32,4 +32,8 @@ $lang['There are %d messages'] = 'Hai %d mensaxes';
 $lang['Website'] = 'Sitio web';
 $lang['invalid website address'] = 'Enderezo de correo electrónico non válido';
 $lang['not publicly visible'] = 'non visible ó público';
-?>
+$lang['Guests (not registered) permissions :'] = 'Permisos (non identificados) de convidados:';
+$lang['Rate'] = 'avaliar';
+$lang['Send'] = 'enviar';
+$lang['add comment'] = 'engadir comentario';
+$lang['view comments'] = 'visualizar comentarios';
