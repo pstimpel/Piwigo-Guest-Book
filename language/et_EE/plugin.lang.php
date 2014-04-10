@@ -35,4 +35,5 @@ $lang['Please enter your e-mail'] = 'Palun sisesta oma e-mail';
 $lang['Guests (not registered) permissions :'] = 'Külaliste õigused:';
 $lang['add comment'] = 'lisa kommentaar';
 $lang['view comments'] = 'vaata kommentaare';
-?>
+$lang['Send'] = 'Saada';
+$lang['Rate'] = 'Hinda';
