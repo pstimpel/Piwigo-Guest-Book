@@ -35,4 +35,5 @@ $lang['Please enter your e-mail'] = 'Írja be az e-mail címet';
 $lang['Guests (not registered) permissions :'] = 'Vendégek (regisztráció nélküliek) engedélyei';
 $lang['add comment'] = 'hozzászólás hozzáadása';
 $lang['view comments'] = 'hozzászólások megtekintése';
-?>
+$lang['Rate'] = 'Értékelés';
+$lang['Send'] = 'Küldés';
