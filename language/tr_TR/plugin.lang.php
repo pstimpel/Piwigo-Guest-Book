@@ -35,4 +35,5 @@ $lang['Please enter your e-mail'] = 'Lütfen e-posta adresinizi girin';
 $lang['Guests (not registered) permissions :'] = 'Misafir (kayıtlı olmayan) izinleri:';
 $lang['add comment'] = 'yorum ekle';
 $lang['view comments'] = 'yorumları gör';
-?>
+$lang['Rate'] = 'Değerlendir';
+$lang['Send'] = 'Gönder';
