@@ -35,4 +35,5 @@ $lang['not publicly visible'] = '不公開顯示的';
 $lang['Guests (not registered) permissions :'] = '訪客（未註冊）的權限：';
 $lang['add comment'] = '新增評論';
 $lang['view comments'] = '查看評論';
-?>
+$lang['Rate'] = '評級';
+$lang['Send'] = '發送';
