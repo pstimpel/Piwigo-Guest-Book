@@ -3,7 +3,7 @@ defined('PHPWG_ROOT_PATH') or die('Hacking attempt!');
 
 class GuestBook_maintain extends PluginMaintain
 {
-  private $installed = false;
+  private $table;
   
   private $default_conf = array(
     'comments_validation' => false,
@@ -14,19 +14,26 @@ class GuestBook_maintain extends PluginMaintain
     'guest_can_view' => true,
     'guest_can_add' => true,
     );
+  
+  function __construct($id)
+  {
+    global $prefixeTable;
+    
+    parent::__construct($id);
+    $this->table = $prefixeTable.'guestbook';
+  }
 
   function install($plugin_version, &$errors=array())
   {
-    global $conf, $prefixeTable;
+    global $conf;
   
     if (empty($conf['guestbook']))
     {
-      $conf['guestbook'] = serialize($this->default_conf);
-      conf_update_param('guestbook', $conf['guestbook']);
+      conf_update_param('guestbook', $this->default_conf, true);
     }
     else
     {
-      $old_conf = is_string($conf['guestbook']) ? unserialize($conf['guestbook']) : $conf['guestbook'];
+      $old_conf = safe_unserialize($conf['guestbook']);
       
       if (!isset($old_conf['guest_can_view']))
       {
@@ -34,12 +41,11 @@ class GuestBook_maintain extends PluginMaintain
         $old_conf['guest_can_add'] = true;
       }
       
-      $conf['guestbook'] = serialize($old_conf);
-      conf_update_param('guestbook', $conf['guestbook']);
+      conf_update_param('guestbook', $old_conf, true);
     }
   
     pwg_query('
-CREATE TABLE IF NOT EXISTS `' . $prefixeTable . 'guestbook` (
+CREATE TABLE IF NOT EXISTS `' . $this->table . '` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL DEFAULT "0000-00-00 00:00:00",
   `author` varchar(255) NOT NULL,
@@ -54,27 +60,16 @@ CREATE TABLE IF NOT EXISTS `' . $prefixeTable . 'guestbook` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8
 ;');
-
-    $this->installed = true;
   }
-
-  function activate($plugin_version, &$errors=array())
+  
+  function update($old_version, $new_version, &$errors=array())
   {
-    if (!$this->installed)
-    {
-      $this->install($plugin_version, $errors);
-    }
-  }
-
-  function deactivate()
-  {
+    $this->install($new_version, $errors);
   }
 
   function uninstall()
   {
-    global $prefixeTable;
-  
-    pwg_query('DROP TABLE `' . $prefixeTable . 'guestbook`;');
+    pwg_query('DROP TABLE `' . $this->table . '`;');
 
     conf_delete_param('guestbook');
   }

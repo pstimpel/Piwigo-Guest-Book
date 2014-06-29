@@ -13,7 +13,7 @@ if (isset($_POST['submit']))
     'guest_can_add' => isset($_POST['guest_can_add']),
     );
     
-  conf_update_param('guestbook', serialize($conf['guestbook']));
+  conf_update_param('guestbook', $conf['guestbook']);
   $page['infos'][] = l10n('Information data registered in database');
 }
 
