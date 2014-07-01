@@ -37,3 +37,4 @@ $lang['add comment'] = 'dodaj komentar';
 $lang['view comments'] = 'ogled komentarjev';
 $lang['Rate'] = 'Oceni';
 $lang['Send'] = 'Pošlji';
+$lang['Add link in menu'] = 'Dodaj povezavo v meni';

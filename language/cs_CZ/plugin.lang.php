@@ -35,4 +35,4 @@ $lang['Please enter your e-mail'] = 'Váš e-mail:';
 $lang['view comments'] = 'zobrazit komentáře';
 $lang['add comment'] = 'přidat komentář';
 $lang['Guests (not registered) permissions :'] = 'Oprávnění hostů (neregistrovaných uživatelů):';
-?>
+$lang['Add link in menu'] = 'Vložit odkaz do menu';

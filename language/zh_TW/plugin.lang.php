@@ -37,3 +37,4 @@ $lang['add comment'] = '新增評論';
 $lang['view comments'] = '查看評論';
 $lang['Rate'] = '評級';
 $lang['Send'] = '發送';
+$lang['Add link in menu'] = '選單中新增連結';

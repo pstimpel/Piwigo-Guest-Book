@@ -37,3 +37,4 @@ $lang['add comment'] = 'yorum ekle';
 $lang['view comments'] = 'yorumları gör';
 $lang['Rate'] = 'Değerlendir';
 $lang['Send'] = 'Gönder';
+$lang['Add link in menu'] = 'Menüye bağlantı ekle';

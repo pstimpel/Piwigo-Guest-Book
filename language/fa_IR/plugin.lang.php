@@ -37,3 +37,4 @@ $lang['add comment'] = 'افزودن دیدگاه';
 $lang['view comments'] = 'دیدن دیدگاه‌ها';
 $lang['Rate'] = 'رتبه';
 $lang['Send'] = 'فرستادن';
+$lang['Add link in menu'] = 'افزودن یک پیوند در منو';

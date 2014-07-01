@@ -37,3 +37,4 @@ $lang['add comment'] = 'legg til kommentar';
 $lang['Guests (not registered) permissions :'] = 'Gjestenes(ikke registrerte)tillatelser';
 $lang['Rate'] = 'Vurder';
 $lang['Send'] = 'Send';
+$lang['Add link in menu'] = 'Legg til link i menyen';

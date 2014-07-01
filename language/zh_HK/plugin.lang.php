@@ -37,3 +37,4 @@ $lang['add comment'] = '新增評論';
 $lang['view comments'] = '檢視評論';
 $lang['Rate'] = '比率';
 $lang['Send'] = '發送';
+$lang['Add link in menu'] = '在功能表添加連結';

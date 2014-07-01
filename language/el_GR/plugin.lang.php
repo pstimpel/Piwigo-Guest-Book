@@ -37,3 +37,4 @@ $lang['add comment'] = 'πρόσθεσε ένα σχόλιο';
 $lang['Guests (not registered) permissions :'] = 'Δικαιώματα Επισκεπτών (Μη Εγγεγραμμένοι)';
 $lang['Send'] = 'Αποστολή';
 $lang['Rate'] = 'Βαθμολόγιση';
+$lang['Add link in menu'] = 'Προσθέστε ένα σύνδεσμο στο μενού';

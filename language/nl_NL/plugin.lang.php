@@ -37,3 +37,4 @@ $lang['add comment'] = 'geef commentaar';
 $lang['view comments'] = 'bekijk commentaar';
 $lang['Rate'] = 'Waarderen';
 $lang['Send'] = 'Verstuur';
+$lang['Add link in menu'] = 'Voeg link aan menu toe';

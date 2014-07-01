@@ -35,4 +35,4 @@ $lang['Please enter your e-mail'] = 'Anna sähköpostiosoitteesi';
 $lang['Guests (not registered) permissions :'] = 'Vieraiden (rekisteröimättömät käyttäjät) käyttöoikeudet:';
 $lang['add comment'] = 'kommentoi';
 $lang['view comments'] = 'näytä kommentit';
-?>
+$lang['Add link in menu'] = 'Lisää linkki valikkoon';

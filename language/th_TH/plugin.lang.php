@@ -32,4 +32,4 @@ $lang['There are %d messages'] = 'มี %d ข้อความ';
 $lang['not publicly visible'] = 'ไม่สามารถมองเห็นแบบเปิดเผย';
 $lang['Please enter a message'] = 'กรุณากรอกข้อความก่อนทำการส่ง';
 $lang['Please enter your e-mail'] = 'กรุณากรอกอีเมลของคุณ';
-?>
+$lang['Add link in menu'] = 'เพิ่มลิงค์ในเมนู';

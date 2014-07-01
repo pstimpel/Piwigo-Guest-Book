@@ -37,3 +37,4 @@ $lang['add comment'] = '添加评论';
 $lang['view comments'] = '查看评论';
 $lang['Rate'] = '评分';
 $lang['Send'] = '发送';
+$lang['Add link in menu'] = '在菜单中添加链接';

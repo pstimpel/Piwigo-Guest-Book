@@ -35,4 +35,4 @@ $lang['Please enter your e-mail'] = 'من فضلك ادخل بريدك الإل�
 $lang['Guests (not registered) permissions :'] = 'صلاحيات الزوار (غير المسجلين):';
 $lang['add comment'] = 'إضافة تعليق';
 $lang['view comments'] = 'مشاهدة التعليقات';
-?>
+$lang['Add link in menu'] = 'اضف رابط في القائمة';

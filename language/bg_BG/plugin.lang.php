@@ -37,3 +37,4 @@ $lang['add comment'] = 'добави коментар';
 $lang['Guests (not registered) permissions :'] = 'Права за Гости (нерегистрирани):';
 $lang['Rate'] = 'Оценка';
 $lang['Send'] = 'Изпращане';
+$lang['Add link in menu'] = 'Добави линк в менюто';

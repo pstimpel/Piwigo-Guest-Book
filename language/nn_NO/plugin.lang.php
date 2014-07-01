@@ -35,4 +35,4 @@ $lang['not publicly visible'] = 'ikkje synleg for alle';
 $lang['Guests (not registered) permissions :'] = 'Rettar for gjester (ikkje registrerte):';
 $lang['add comment'] = 'legg til kommentar';
 $lang['view comments'] = 'vis kommentar';
-?>
+$lang['Add link in menu'] = 'Legg lenke til meny';

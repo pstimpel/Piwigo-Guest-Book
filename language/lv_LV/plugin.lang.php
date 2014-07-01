@@ -37,3 +37,4 @@ $lang['view comments'] = 'skatīt komentārus';
 $lang['add comment'] = 'pievienot komentāru';
 $lang['Rate'] = 'likme';
 $lang['Send'] = 'Sūtīt';
+$lang['Add link in menu'] = 'Pievienot saiti izvēlnē';

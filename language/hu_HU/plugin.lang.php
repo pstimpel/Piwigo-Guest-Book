@@ -37,3 +37,4 @@ $lang['add comment'] = 'hozzászólás hozzáadása';
 $lang['view comments'] = 'hozzászólások megtekintése';
 $lang['Rate'] = 'Értékelés';
 $lang['Send'] = 'Küldés';
+$lang['Add link in menu'] = 'Kapcsolat elem hozzáadása a menühöz';

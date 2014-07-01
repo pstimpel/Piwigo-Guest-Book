@@ -21,9 +21,9 @@ function gb_menubar_apply($menu_ref_arr)
   
   $menu = &$menu_ref_arr[0];
   
-  if ( ($block = $menu->get_block('mbMenu')) != null )
+  if (($block = $menu->get_block('mbMenu')) != null)
   {
-    $block->data[] = array(
+    $block->data['guestbook'] = array(
       'URL' => GUESTBOOK_URL,
       'TITLE' => l10n('GuestBook'),
       'NAME' => l10n('GuestBook')

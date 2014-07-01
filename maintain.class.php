@@ -13,6 +13,7 @@ class GuestBook_maintain extends PluginMaintain
     'activate_rating' => true,
     'guest_can_view' => true,
     'guest_can_add' => true,
+    'menu_link' => true,
     );
   
   function __construct($id)
@@ -39,6 +40,10 @@ class GuestBook_maintain extends PluginMaintain
       {
         $old_conf['guest_can_view'] = true;
         $old_conf['guest_can_add'] = true;
+      }
+      if (!isset($old_conf['menu_link']))
+      {
+        $old_conf['menu_link'] = true;
       }
       
       conf_update_param('guestbook', $old_conf, true);

@@ -37,3 +37,4 @@ $lang['add comment'] = 'lisa kommentaar';
 $lang['view comments'] = 'vaata kommentaare';
 $lang['Send'] = 'Saada';
 $lang['Rate'] = 'Hinda';
+$lang['Add link in menu'] = 'Lisa menüüsse link';

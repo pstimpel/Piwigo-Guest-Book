@@ -37,3 +37,4 @@ $lang['view comments'] = 'zobraziť komentáre';
 $lang['add comment'] = 'pridať komentár';
 $lang['Send'] = 'Poslať';
 $lang['Rate'] = 'Hodnotenie';
+$lang['Add link in menu'] = 'Pridať link do menu';

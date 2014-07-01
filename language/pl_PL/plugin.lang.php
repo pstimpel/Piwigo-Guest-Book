@@ -35,4 +35,4 @@ $lang['Please enter your e-mail'] = 'Wpisz swój e-mail';
 $lang['Guests (not registered) permissions :'] = 'Uprawnienia Gości (nie zarejestrowanych)';
 $lang['add comment'] = 'dodawanie komentarzy';
 $lang['view comments'] = 'oglądanie komentarzy';
-?>
+$lang['Add link in menu'] = 'Dodaj link do menu';

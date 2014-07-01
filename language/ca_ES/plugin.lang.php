@@ -37,3 +37,4 @@ $lang['add comment'] = 'afegeix un comentari';
 $lang['view comments'] = 'visualitza comentaris';
 $lang['Rate'] = 'Valora';
 $lang['Send'] = 'Envia';
+$lang['Add link in menu'] = 'Afegeix un enllaç al menú';
