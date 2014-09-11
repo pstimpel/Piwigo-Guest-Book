@@ -36,3 +36,5 @@ $lang['Guests (not registered) permissions :'] = 'Vieraiden (rekisteröimättöm
 $lang['add comment'] = 'kommentoi';
 $lang['view comments'] = 'näytä kommentit';
 $lang['Add link in menu'] = 'Lisää linkki valikkoon';
+$lang['Rate'] = 'Arvostele';
+$lang['Send'] = 'Lähetä';
