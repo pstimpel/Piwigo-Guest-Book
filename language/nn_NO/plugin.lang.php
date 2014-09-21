@@ -36,3 +36,5 @@ $lang['Guests (not registered) permissions :'] = 'Rettar for gjester (ikkje regi
 $lang['add comment'] = 'legg til kommentar';
 $lang['view comments'] = 'vis kommentar';
 $lang['Add link in menu'] = 'Legg lenke til meny';
+$lang['Rate'] = 'Gje karakter';
+$lang['Send'] = 'Lagre';
