@@ -37,3 +37,4 @@ $lang['add comment'] = 'додај коментар';
 $lang['invalid website address'] = 'неисправна адреса веб странице';
 $lang['not publicly visible'] = 'није јавно видљиво';
 $lang['view comments'] = 'погледај коментаре';
+$lang['Add link in menu'] = 'Додај везу у мени';
