@@ -36,3 +36,5 @@ $lang['Guests (not registered) permissions :'] = 'Quyền của khách (không �
 $lang['add comment'] = 'thêm bình luận';
 $lang['view comments'] = 'xem bình luận';
 $lang['Add link in menu'] = 'Thêm liên kết vào trình đơn';
+$lang['Send'] = 'Gửi';
+$lang['Rate'] = 'Đánh giá';
