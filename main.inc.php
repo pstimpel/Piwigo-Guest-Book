@@ -10,13 +10,22 @@ Author URI: http://www.strangeplanet.fr
 
 defined('PHPWG_ROOT_PATH') or die('Hacking attempt!');
 
-// TODO akismet
+if (basename(dirname(__FILE__)) != 'GuestBook')
+{
+  add_event_handler('init', 'guestbook_error');
+  function guestbook_error()
+  {
+    global $page;
+    $page['errors'][] = 'GuestBook folder name is incorrect, uninstall the plugin and rename it to "GuestBook"';
+  }
+  return;
+}
+
 global $conf, $prefixeTable;
 
-define('GUESTBOOK_ID',      basename(dirname(__FILE__)));
-define('GUESTBOOK_PATH' ,   PHPWG_PLUGINS_PATH . GUESTBOOK_ID . '/');
+define('GUESTBOOK_PATH' ,   PHPWG_PLUGINS_PATH . 'GuestBook/');
 define('GUESTBOOK_TABLE' ,  $prefixeTable . 'guestbook');
-define('GUESTBOOK_ADMIN',   get_root_url().'admin.php?page=plugin-' . GUESTBOOK_ID);
+define('GUESTBOOK_ADMIN',   get_root_url().'admin.php?page=plugin-GuestBook');
 define('GUESTBOOK_URL',     get_absolute_root_url() . make_index_url(array('section' => 'guestbook')));
 
 $conf['guestbook'] = safe_unserialize($conf['guestbook']);
