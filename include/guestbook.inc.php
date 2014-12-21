@@ -160,7 +160,7 @@ $row = pwg_db_fetch_assoc(pwg_query($query));
 
 // navigation bar creation
 $page['start'] = 0;
-if (isset($_GET['start']))
+if (isset($_GET['start']) && is_numeric($_GET['start']) && $_GET['start'] >= 0)
 {
   $page['start'] = $_GET['start'];
 }
