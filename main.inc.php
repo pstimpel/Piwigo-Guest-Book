@@ -54,4 +54,5 @@ if ($conf['guestbook']['menu_link'])
 function guestbook_init()
 {
   load_language('plugin.lang', GUESTBOOK_PATH);
+  load_language('lang', PHPWG_ROOT_PATH.PWG_LOCAL_DIR, array('no_fallback'=>true, 'local'=>true));
 }
