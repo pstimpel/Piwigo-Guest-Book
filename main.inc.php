@@ -33,7 +33,7 @@ $conf['guestbook'] = safe_unserialize($conf['guestbook']);
 include_once(GUESTBOOK_PATH . 'include/events.inc.php');
 
 
-add_event_handler('init', 'guestbook_init');
+add_event_handler('loading_lang', 'guestbook_loading_lang');
 
 if (defined('IN_ADMIN'))
 {
@@ -51,7 +51,7 @@ if ($conf['guestbook']['menu_link'])
 }
 
 
-function guestbook_init()
+function guestbook_loading_lang()
 {
   load_language('plugin.lang', GUESTBOOK_PATH);
 }
