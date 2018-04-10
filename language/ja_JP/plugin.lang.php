@@ -37,3 +37,4 @@ $lang['Website'] = 'ウェブサイト';
 $lang['add comment'] = 'コメントを追加する';
 $lang['invalid website address'] = '無効なウェブサイトアドレス';
 $lang['view comments'] = 'コメントを見る';
+$lang['%s says on %s :'] = '%s は %s で言う。';
