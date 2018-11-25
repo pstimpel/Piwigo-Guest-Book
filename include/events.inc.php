@@ -37,7 +37,7 @@ function gb_section_init()
 
   if ($tokens[0] == 'guestbook')
   {
-    $page['section'] = 'guestbook';
+    $page['sectionstring'] = 'guestbook';
     $page['body_id'] = 'theGuestBook';
     $page['is_external'] = true;
     $page['is_homepage'] = false;
@@ -51,7 +51,7 @@ function gb_index()
 {
   global $template, $page, $conf;
 
-  if (isset($page['section']) and $page['section'] == 'guestbook')
+  if (isset($page['sectionstring']) and $page['sectionstring'] == 'guestbook')
   {
     if (is_a_guest() && !$conf['guestbook']['guest_can_view'])
     {
