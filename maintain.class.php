@@ -52,7 +52,7 @@ class GuestBook_maintain extends PluginMaintain
     pwg_query('
 CREATE TABLE IF NOT EXISTS `' . $this->table . '` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `date` datetime NOT NULL DEFAULT "0000-00-00 00:00:00",
+  `date` datetime NOT NULL DEFAULT now(),
   `author` varchar(255) NOT NULL,
   `author_id` smallint(5) DEFAULT NULL,
   `anonymous_id` varchar(45) NOT NULL,
